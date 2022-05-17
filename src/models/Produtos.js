@@ -1,37 +1,35 @@
 import { ListarProdutos } from '../models/Api.js';
 
 const produtos = await ListarProdutos.metodoGet()
-const body = document.querySelector('body')
+const section = document.querySelector('.container-cards')
 
 class Produtos{
     static mostrarProdutos() {
         const ul = document.createElement('ul')
-        ul.id = 'ulItens'
+        ul.id = 'lista-de-cards'
         produtos.forEach(({imagem, nome, descricao, categoria, preco}) => {
 
             const li = document.createElement('li')
+            li.classList.add('card-produto')
 
             const imagemProduto = document.createElement('img')
             imagemProduto.src = imagem
-            imagemProduto.id = 'imagemProduto'
 
-            const nomeProduto = document.createElement('span')
+            const nomeProduto = document.createElement('h2')
             nomeProduto.innerText = nome
-            nomeProduto.id = 'nomeProduto'
 
-            const descricaoProduto = document.createElement('span')
+            const descricaoProduto = document.createElement('p')
             descricaoProduto.innerText = descricao
-            descricaoProduto.id = 'descricaoProduto'
 
             const categoriaProdutos = document.createElement('span')
             categoriaProdutos.innerText = categoria
-            categoriaProdutos.id = 'categoriaProdutos'
+            categoriaProdutos.id = 'categoria'
 
             const precoProdutos = document.createElement('span')
             precoProdutos.innerText = preco
-            precoProdutos.id = 'precoProdutos'
+            precoProdutos.id = 'preco'
 
-            body.appendChild(ul)
+            section.appendChild(ul)
                 ul.appendChild(li)
                     li.appendChild(imagemProduto)
                     li.appendChild(nomeProduto)

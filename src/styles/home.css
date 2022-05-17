@@ -1,251 +1,301 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Montserrat:wght@100;400&family=Poppins:wght@400;700&family=Roboto:wght@100;300;400;500&display=swap');
 
-header{
-  width: 100vw;
-  height: 72px;
-  background-color: #FFFFFF;
-  box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+body {
+  font-family: 'Poppins', sans-serif;
+}
+li {
+  list-style: none;
+  margin-left: 30px;
 }
 
-header > h1 {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 21.6949px;
-  line-height: 33px;
-  background: -webkit-linear-gradient(left,#212529 55%, #FF2253 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline;
-  margin-left: 117px;
+@media (min-width: 320px) {
+  /*Body*/
+  #edicaoMobile{
+      margin: -54px;
+  }
+  /*H1*/
+  #textoFooter{
+      margin-left: 80px;
+      margin-bottom: 70px;
+      margin-top: 57px;
+  }
+  #textoFood {
+      font-weight: 700;
+      color: red;
+      font-size: 16px;
+      padding-left: 112px;
+      margin-top: -56px;
+  }
+  #textoKenzie {
+      font-weight: 700;
+  }
+  /*Input pesquisar*/
+  #blocoInputMobile{
+      margin-top: -45px;
+      margin-left: 40px;
+  }
+  #inputMobile{
+      border-radius: 6px;
+      font-family: 'Poppins';
+      width: 230px;
+      height: 39px;
+      padding-left: 46px;
+      margin-left: 35px;
+  }
+  #botaoPesquisarMobile{
+      margin: -5px -270px;
+  }
+  /*Botoes de pesquisar*/
+  #blocoBotoesHome{
+      display: flex;
+      flex-direction: row;
+      margin-left: 4px;
+  }
+  #ulItens{
+      display: flex;
+  }
+
+  }
+@media (min-width: 1200px) {
+  header{
+    width: 100vw;
+    height: 72px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+  }
+  
+  header > h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.6949px;
+    line-height: 33px;
+    background: -webkit-linear-gradient(left,#212529 55%, #FF2253 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+    margin-left: 117px;
+  }
+  
+  
+  
+  header > input{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 18px 15px 16px;
+    gap: 14px;
+    width: 312px;
+    height: 49px;
+    background: #E9ECEF;
+    border: 1.5px solid #E9ECEF;
+    border-radius: 12px;
+    margin-right: 115px;
+  }
+  
+  .container-filtros{
+    float: left;
+  }
+  
+  menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-left: 117px;
+    gap: 15px;
+    padding-top: 20px;
+  }
+  
+  section > menu > button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    background: #FFF7F4;
+    border: 1.5px solid #FFF7F4;
+    border-radius: 32px;
+    color: #212529;
+    cursor: pointer;
+  }
+  
+  section.container-carrinho{
+    float: right;
+    margin-right: 114px;
+    padding-top: 20px;
+  }
+  
+  section > aside > div#header-carrinho{
+    background: #FF2253;
+    border-radius: 8px 8px 0px 0px;
+    width: 320px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  section > aside > div > h3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  section > aside > div#corpo-carrinho{
+    width: 319px;
+    height: 296px;
+    background: #F8F9FA;
+    border-radius: 0px 0px 12px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section > aside > div > p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #868E96;
+  }
+  
+  section > aside > div#footer-carrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  
+  #quantidade{
+    width: 319px;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8F9FA;
+  }
+  
+  #quantidade p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 13px;
+    color: #000000;
+    padding-left: 18px;
+  }
+  
+  #total p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 13px;
+    color: #000000;
+    padding-left: 18px;
+  }
+  
+  .container-cards{
+    display: flex;
+    flex-direction: row;
+    width: 1059px;
+    padding-top: 50px;
+  }
+  
+  ul{
+    display: flex;
+    margin-left: 115px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -300px;
+    margin-left: 69px;
+  }
+  
+  li{
+    width: 303px;
+    height: 397px;
+    display: grid;
+    align-content: revert;
+    justify-content: center;
+    align-items: baseline;
+    justify-items: start;
+  }
+  
+  section > ul > li > img{
+    width: 294px;
+    height: 194px;
+    border-radius: 5px;
+    border: 3px solid #FFE9EE;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  section > ul > li > h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 27px;
+    color: #000000;
+  }
+  
+  section > ul > li > p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  
+  section > ul > li > span#categoria{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #868E96;
+  }
+  
+  section > ul > li > span#preco{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212529;
+  }
+  
+  header > form > div > input:hover{
+    background: #F8F9FA;
+    border: 1.5px solid #212529;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  section > menu > button:hover{
+    background: #FF2253;
+    border: 1.5px solid #FF2253;
+    border-radius: 32px;
+    color: #F8F9FA;
+  }
+  
+  li:hover{
+  
+    cursor: pointer;
+  }
 }
-
-
-
-header > input{
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 15px 18px 15px 16px;
-  gap: 14px;
-  width: 312px;
-  height: 49px;
-  background: #E9ECEF;
-  border: 1.5px solid #E9ECEF;
-  border-radius: 12px;
-  margin-right: 115px;
-}
-
-.container-filtros{
-  float: left;
-}
-
-menu{
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  margin-left: 117px;
-  gap: 15px;
-  padding-top: 20px;
-}
-
-section > menu > button{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 20px;
-  background: #FFF7F4;
-  border: 1.5px solid #FFF7F4;
-  border-radius: 32px;
-  color: #212529;
-  cursor: pointer;
-}
-
-section.container-carrinho{
-  float: right;
-  margin-right: 114px;
-  padding-top: 20px;
-}
-
-section > aside > div#header-carrinho{
-  background: #FF2253;
-  border-radius: 8px 8px 0px 0px;
-  width: 320px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-section > aside > div > h3{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 27px;
-  color: #FFFFFF;
-  text-align: center;
-}
-
-section > aside > div#corpo-carrinho{
-  width: 319px;
-  height: 296px;
-  background: #F8F9FA;
-  border-radius: 0px 0px 12px 12px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-section > aside > div > p{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
-  color: #868E96;
-}
-
-section > aside > div#footer-carrinho{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-}
-
-#quantidade{
-  width: 319px;
-  height: 58px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: space-between;
-  align-items: center;
-  background: #F8F9FA;
-}
-
-#quantidade p{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 13px;
-  color: #000000;
-  padding-left: 18px;
-}
-
-#total p{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 13px;
-  color: #000000;
-  padding-left: 18px;
-}
-
-.container-cards{
-  display: flex;
-  flex-direction: row;
-  width: 1059px;
-  padding-top: 50px;
-}
-
-ul{
-  display: flex;
-  margin-left: 115px;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-li{
-  width: 303px;
-  height: 397px;
-  display: grid;
-  align-content: revert;
-  justify-content: center;
-  align-items: baseline;
-  justify-items: start;
-}
-
-section > ul > li > img{
-  width: 294px;
-  height: 194px;
-  border-radius: 5px;
-  border: 3px solid #FFE9EE;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-section > ul > li > h2{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 27px;
-  color: #000000;
-}
-
-section > ul > li > p{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-}
-
-section > ul > li > span#categoria{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: #868E96;
-}
-
-section > ul > li > span#preco{
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 20px;
-  color: #212529;
-}
-
-header > form > div > input:hover{
-  background: #F8F9FA;
-  border: 1.5px solid #212529;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-section > menu > button:hover{
-  background: #FF2253;
-  border: 1.5px solid #FF2253;
-  border-radius: 32px;
-  color: #F8F9FA;
-}
-
-li:hover{
-
-  cursor: pointer;
-}
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
->>>>>>> a3e9d0a68ae54f7df37b53289914ff77639da51d
