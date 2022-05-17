@@ -210,4 +210,28 @@
   cursor: pointer;
 }
 
+.btnSalvar, .btnExcluir{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  width: 34vh;
+  height: 7vh;
+  background-color: #F8F9FA;
+  color: #868E96;
+  border-radius: 32px;
+  border: 1.5px solid;
+  border-color: #F8F9FA;
+  cursor: pointer;
+}
+
+.btnSubmitClicado{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  width: 34vh;
+  height: 7vh;
+  background-color: #FF2253;
+  color: white;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
 
