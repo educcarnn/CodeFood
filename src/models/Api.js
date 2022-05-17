@@ -9,7 +9,6 @@ class ListarProdutos{
     }
 
 }
-
 class Cadastro{
     static BASE_URL ='https://api-kenzie-food.herokuapp.com'
 
@@ -51,21 +50,48 @@ class Login {
         })
         .then(response => response.json())
         .then((response) => {
-        console.log(response)
-        /*
-        aqui é gerado um token que será armazenado no localStorage
-        */
+            if(response.error === "password invalid") {
+                const body = document.querySelector('body')
+    
+               const div = document.createElement('div')
+               div.id = 'erroCadastro'
+               div.innerText = 'Problema na sua senha, verifique-a'
+               body.appendChild(div)
+    
+               setTimeout(() => {
+                    div.remove()
+               }, 1500);
+            }
+            else {
+                localStorage.setItem('token', response)
+                window.location = `/src/pages/homeAdmin.html`
+            }
+            })
       
-        })
         .catch((err) => {
             console.error(err);
         })
-        
-        
+            
     }  
 }
-
 /// Rotas Privadas
+class Privados{
+    static async listarProdutosGet(){
+        const URL = "https://api-kenzie-food.herokuapp.com"
+ 
+        const produtos = await fetch(`${URL}/my/products`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+        const data = await produtos.json()
+        return data
+    }
+}
+
 export {ListarProdutos}
 export {Cadastro}
 export {Login}
+// Exports privados
+export {Privados}
