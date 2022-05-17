@@ -46,7 +46,7 @@ header{
 .cadastroCliente{
   width: 80vh;
   height: 70vh;
-  background-color: #FF2253;
+  background-color: white;
   border-radius: 10px;
 }
 
@@ -55,9 +55,8 @@ header{
   align-items: center;
   height: 8vh;
   justify-content: space-between;
-  background-color: white;
-  border: 4px solid;
-  color:#FF2253;
+  background-color:#FF2253 ;
+  color: #FFF1F4;
   font-family: 'Poppins', sans-serif;
   border-radius: 8px 8px 0 0;
 }
