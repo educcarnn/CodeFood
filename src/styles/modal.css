@@ -1,0 +1,99 @@
+.backGroundModal{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.containerModal{
+  background-color: #FF2253;
+  width: 70vh;
+  height: 50vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.btnFecharModal, .btn--fecharLogin{
+  font-size: 1.2em;
+  width: 40px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-radius: 50%;
+  background-color: #9E1517;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
+  position: absolute;
+  top: -20px;
+  right: -15px;
+}
+
+.modalTitulo{
+  width: 60%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.secaoLogin{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container__logar{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.formularioLogin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.inputs{
+  width: 50vh;
+  height: 42px;
+  border-radius: 3px;
+  border: none;
+  padding-left: 10px;
+}
+
+.textoCadastrar{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.btnLoginModal{
+  width: 20vh;
+  height: 6vh;
+  background-color: #5f0f40;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+}
