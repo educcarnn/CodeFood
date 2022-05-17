@@ -90,6 +90,19 @@
 .btnLoginModal{
   width: 20vh;
   height: 6vh;
+  background-color: #F8F9FA;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btnLoginModal:hover{
+  width: 20vh;
+  height: 6vh;
   background-color: #5f0f40;
   border-radius: 5px;
   color: white;
