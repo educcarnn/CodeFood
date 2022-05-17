@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-*{
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins";
-=======
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-/*
-Reset para ser usado 
-*/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,5 +45,4 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
->>>>>>> 6d4067db30617b141b26293ace8e673f840edf4c
 }
