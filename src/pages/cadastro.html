@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/src/styles/cadastro.css">
+  <link rel="stylesheet" href="/src/styles/reset.css">
+
+</head>
+<body>
+  <header>
+    <h1 class="tituloSite">Kenzie Food</h1>
+    <div class="containerBtn">
+      <button class="login">Login</button>
+      <button class="homePage">Home</button>
+    </div>
+  </header>
+  <div class="containerCadastro">
+    <div class="cadastroCliente">
+      <div class="headerCadastroCliente">
+        <h3 class="tituloCadastroCliente">Cadastro</h3>
+      </div>
+      <form class="formularioCadastroCliente" required>
+        <input type="text" name="nome" placeholder="Digite o nome" class="categoria" required>
+        
+        <input type="email" name="email" placeholder="Digite um email" class="categoria descricao" required>
+        
+        <input type="password" name="password" placeholder="Digite sua senha" class="categoria" required>
+
+        <input type="password" name="password2" placeholder="Confirme a senha" class="categoria" required>
+         
+        <div class="containerBtnSubmit">
+          <button type="submit" class="btnCadastrar">Cadastrar-se</button>
+        </div>
+      </form>
+    </div>    
+  </div>
+</body>
+</html>
