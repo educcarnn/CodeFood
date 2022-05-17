@@ -1,14 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  <title>Kenzie Food</title>
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/home.css">
+  
 <body>
   <header>
     <h1>Kenzie Food</h1>
+      <input type="search" class="input-campo" placeholder="Pesquisar por produto" name="input-pesquisar">
   </header>
+
+  <main>
+    <section class="container-filtros">
+      <menu class="botoes-filtros">
+        <button>Todos</button>
+        <button>Panificadora</button>
+        <button>Frutas</button>
+        <button>Bebidas</button>
+      </menu>
+    </section>
+
+    <section class="container-carrinho">
+      <aside>
+
+        <div id="header-carrinho">
+          <h3>Carrinho</h3>
+        </div>
+        <div id="corpo-carrinho">
+          <p>Por enquanto não temos produtos no carrinho</p>
+        </div>
+
+        <!-- <div id="footer-carrinho">
+          <div id="quantidade">
+            <p>Quantidade</p>
+          </div>
+          <div id="total">
+            <p>Total</p>
+          </div>
+        </div> ESSE APARECE DINAMICAMENTE QUNADO ADICIONA PRODUTO NO CARRINHO-->
+
+      </aside>
+    </section>
+
+    <section class="container-cards">
+      <ul id="lista-de-cards">
+        <li class="card-produto">
+          <img src="../imgs/exemplo-produto.png" alt="">
+          <h2>Nome do produto</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minus nesciunt perspiciatis ipsa ullam, culpa sit nihil re.</p>
+          <span id="categoria">Categoria do produto</span>
+          <span id="preco">R$ 27,50</span>
+          <div id="icone"></div>
+        </li>
+        <li class="card-produto">
+          <img src="../imgs/exemplo-produto.png" alt="">
+          <h2>Nome do produto</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minus nesciunt perspiciatis ipsa ullam, culpa sit nihil re.</p>
+          <span id="categoria">Categoria do produto</span>
+          <span id="preco">R$ 27,50</span>
+          <div id="icone"></div>
+        </li>
+        <li class="card-produto">
+          <img src="../imgs/exemplo-produto.png" alt="">
+          <h2>Nome do produto</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minus nesciunt perspiciatis ipsa ullam, culpa sit nihil re.</p>
+          <span id="categoria">Categoria do produto</span>
+          <span id="preco">R$ 27,50</span>
+          <div id="icone"></div>
+        </li>
+        <li class="card-produto">
+          <img src="../imgs/exemplo-produto.png" alt="">
+          <h2>Nome do produto</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minus nesciunt perspiciatis ipsa ullam, culpa sit nihil re.</p>
+          <span id="categoria">Categoria do produto</span>
+          <span id="preco">R$ 27,50</span>
+          <div id="icone"></div>
+        </li>
+        <li class="card-produto">
+          <img src="../imgs/exemplo-produto.png" alt="">
+          <h2>Nome do produto</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minus nesciunt perspiciatis ipsa ullam, culpa sit nihil re.</p>
+          <span id="categoria">Categoria do produto</span>
+          <span id="preco">R$ 27,50</span>
+          <div id="icone"></div>
+        </li>
+        <li class="card-produto">
+          <img src="../imgs/exemplo-produto.png" alt="">
+          <h2>Nome do produto</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio minus nesciunt perspiciatis ipsa ullam, culpa sit nihil re.</p>
+          <span id="categoria">Categoria do produto</span>
+          <span id="preco">R$ 27,50</span>
+          <div id="icone"></div>
+        </li>
+        <!-- APENAS EXEMPLO.ESSES ITENS SERÃO CADA UM DOS CARDS DE PRODUTOS E SERÁ CRIADO PELO DOM-->
+      </ul><!--id="lista-de-cards"-->
+    </section><!--class="container-cards"-->
+  </main>
 </body>
 </html>
