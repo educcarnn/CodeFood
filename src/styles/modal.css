@@ -1,3 +1,5 @@
+/*MODAL CLIENTE NÃO CADASTRADO*/
+
 .backGroundModal{
   width: 100%;
   height: 100%;
@@ -97,3 +99,139 @@
   margin-top: 10px;
   cursor: pointer;
 }
+
+/*MODAL CADASTRO DE PROTUDO*/
+
+.modalCadastroProduto{
+  width: 71vh;
+  height: 90vh;
+  background-color: #FFFFFF;
+}
+
+.headerModalCadastroProduto{
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  background-color: #F8F9FA;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tituloCadastroProduto{
+  font-size: 2vh 500;
+  margin-left: 3.5vh;
+  line-height: 2.8vh;
+}
+
+.btnFecharCadasto{
+  width: 4.5vh;
+  height: 4.2vh;
+  background-color: #E9ECEF;
+  border: none;
+  border-radius: 5px;
+  color: #868E96;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.formularioCadastroProduto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4vh;
+}
+
+.containerCategoria{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-bottom: 4.7vh;
+}
+
+.categoriaTitulo{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #212529;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.categoria{
+  padding-left: 10px;
+  width: 60vh;
+  height: 6vh;
+  background-color: #F8F9FA;
+  color: #868E96;
+  border-radius: 12px;
+  border: 1.5px solid;
+  border-color: #DEE2E6;
+}
+
+.descricao{
+  height: 11vh;
+}
+
+.categoriaBtn{
+  width: 60vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btnCategoria{
+  width: 135px;
+  height: 40px;
+  background-color: #DEE2E6;
+  color: #868E96;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.categoriaClicada{
+  width: 135px;
+  height: 40px;
+  background-color: #DEE2E6;
+  color: #FF2253;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnCadastrar{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  width: 60vh;
+  height: 7vh;
+  background-color: #FF2253;
+  color: white;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.btnSalvar, .btnExcluir{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  width: 34vh;
+  height: 7vh;
+  background-color: #F8F9FA;
+  color: #868E96;
+  border-radius: 32px;
+  border: 1.5px solid;
+  border-color: #F8F9FA;
+  cursor: pointer;
+}
+
+.btnSubmitClicado{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  width: 34vh;
+  height: 7vh;
+  background-color: #FF2253;
+  color: white;
+  border-radius: 32px;
+  cursor: pointer;
+}
+
+
