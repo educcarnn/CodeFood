@@ -1,12 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenzie Food</title>
+  <link rel="stylesheet" href="../styles/reset.css">
+
+  <link rel="stylesheet" href="./src/styles/home.css">
+  
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet'>
+
+
+
 <body>
-    
+  <header>
+    <h1>Kenzie Food</h1>
+      <input type="search" class="input-campo" placeholder="Pesquisar por produto" name="input-pesquisar">
+  </header>
+
+  <main>
+    <section class="container-filtros">
+      <menu class="botoes-filtros">
+        <button>Todos</button>
+        <button>Panificadora</button>
+        <button>Frutas</button>
+        <button>Bebidas</button>
+      </menu>
+    </section>
+
+    <section class="container-carrinho">
+      <aside>
+
+        <div id="header-carrinho">
+          <h3>Carrinho</h3>
+        </div>
+        <div id="corpo-carrinho">
+          <p>Por enquanto não temos produtos no carrinho</p>
+        </div>
+
+        <!-- <div id="footer-carrinho">
+          <div id="quantidade">
+            <p>Quantidade</p>
+          </div>
+          <div id="total">
+            <p>Total</p>
+          </div>
+        </div> ESSE APARECE DINAMICAMENTE QUNADO ADICIONA PRODUTO NO CARRINHO-->
+
+      </aside>
+    </section>
+
+    <section class="container-cards">
+      <ul id="lista-de-cards">
+  
+      </ul><!--id="lista-de-cards"-->
+    </section><!--class="container-cards"-->
+
+    <script type='module' src='/src/models/Api.js'></script>
+    <script type='module' src='/src/models/Produtos.js'></script>
+    <script type='module' src='/src/js e handlers/script.js'></script>
+  </main>
 </body>
 </html>
