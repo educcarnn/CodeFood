@@ -9,11 +9,13 @@ class Produtos{
     static quantidade = 0
 
     static DataBase = []
+    
 
     static valorLocal = 0
     static localProdutos = []
     
     static mostrarProdutos(items) {
+
         const ul = document.createElement('ul')
         ul.id = 'lista-de-cards'
         items.forEach(({id, imagem, nome, descricao, categoria, preco}) => {
@@ -101,14 +103,14 @@ class Produtos{
                                     
             })
 
-                this.DataBase.push({
-                    id: id,
-                    imagem: imagem,
-                    nome: nome, 
-                    descricao: descricao,
-                    categoria: categoria,
-                    preco: preco,
-                })
+                // this.DataBase.push({
+                //     id: id,
+                //     imagem: imagem,
+                //     nome: nome, 
+                //     descricao: descricao,
+                //     categoria: categoria,
+                //     preco: preco,
+                // })
                 
       
 
@@ -127,7 +129,6 @@ class Produtos{
     static controleArray(){
         /*
         essa classe é apenas de controle para que a estilização possa ser retomarda ao normal, caso o comprimento do array seja vazio ou zero
-
         */
     }
 
@@ -137,10 +138,6 @@ class Produtos{
 
 
 const produtos = await ListarProdutos.metodoGet()
+Produtos.DataBase = produtos
 Produtos.mostrarProdutos(produtos)
-
-
-
-
-
-
+export { Produtos }
