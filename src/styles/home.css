@@ -269,10 +269,31 @@ li {
 #ulCarrinho{
   width: 300px;
   height: 300px;
-  margin-left: -200px;
-  margin-top: -20px;
+
+  overflow: scroll;
+  margin-top: 15px;
 }
 #imagemProdutoNoCarrinho{
   width: 70px;
   height: 70px;
+}
+#liCarrinho {
+  display: flex;
+  height: 110px;
+  /* margin: 1px; */
+  margin-left: 65px;
+  width: 163px;
+  word-break: normal;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#divInfoCarrinho {
+    margin: 20px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
 }
