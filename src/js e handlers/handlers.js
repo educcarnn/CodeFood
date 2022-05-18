@@ -5,6 +5,7 @@ import { Produtos } from '../models/Produtos.js'
 
 
 const btnAdicionarProduto = document.getElementById('btnAdicionarProduto')
+const ul = document.querySelector('.lista-produtos')
 
 // btnAdicionarProduto.addEventListener('click', function(){
 //   Modals.modalCadastroProduto()

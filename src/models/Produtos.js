@@ -22,6 +22,7 @@ class Produtos{
            
             const li = document.createElement('li')
             li.classList.add('card-produto')
+            
 
             const imagemProduto = document.createElement('img')
             imagemProduto.src = imagem
