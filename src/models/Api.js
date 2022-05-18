@@ -95,7 +95,50 @@ class Privados{
         return data
     }
 
-    
+    static async criarProdutosPost(dadosProduto, id) {
+        const URL = "https://api-kenzie-food.herokuapp.com"
+        
+        return await fetch(`${URL}/my/products/${id}`, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(dadosProduto)
+        })
+        .then(response => response.json())
+        .then(response => response)
+        .catch(err => console.error(err));
+    }
+
+    static async editarProdutosPost(dadosParaAlterar, id){
+        const URL = "https://api-kenzie-food.herokuapp.com"
+
+        return await fetch(`${URL}/my/products/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(dadosParaAlterar)
+        })
+        .then(response => response.json())
+        .then(response => response)
+        .catch(err => console.error(err));
+    }
+
+    static async deletarProdutos(id) {
+        const URL = "https://api-kenzie-food.herokuapp.com"
+
+        return await fetch(`${URL}/my/products/${id}`, {
+            method: "DELETE",
+            headers:  {
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
+            },
+        })
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+    }
 
 }
 
@@ -103,4 +146,3 @@ export {ListarProdutos}
 export {Cadastro}
 export {Login}
 export {Privados}
-// Exports privados
