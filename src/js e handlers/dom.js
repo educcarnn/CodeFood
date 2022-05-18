@@ -133,7 +133,14 @@ class Modals{
 
     secaoPrincipal.appendChild(backGroundModal)
 
-    console.log(secaoPrincipal)
+    btnFecharCadasto.addEventListener('click', function(event){
+      const clicouFechar = event.target.classList
+
+      if(clicouFechar === 'btnFecharCadasto'){
+        secaoPrincipal.removeChild(backGroundModal)
+      }
+    })
+    
   }
 }
 
