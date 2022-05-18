@@ -4,14 +4,17 @@ const section = document.querySelector('.container-cards')
 
 class Produtos{
     static preco = 0
+    
+    static DataBase = []
 
-    static produtos = []
+    static valorLocal = 0
+    static localProdutos = []
     
     static mostrarProdutos(items) {
         const ul = document.createElement('ul')
         ul.id = 'lista-de-cards'
-        items.forEach(({imagem, nome, descricao, categoria, preco}) => {
-
+        items.forEach(({id, imagem, nome, descricao, categoria, preco}) => {
+           
             const li = document.createElement('li')
             li.classList.add('card-produto')
 
@@ -20,6 +23,7 @@ class Produtos{
 
             const nomeProduto = document.createElement('h2')
             nomeProduto.innerText = nome
+            nomeProduto.id = id
 
             const descricaoProduto = document.createElement('p')
             descricaoProduto.innerText = descricao
@@ -29,7 +33,7 @@ class Produtos{
             categoriaProdutos.id = 'categoria'
 
             const precoProdutos = document.createElement('span')
-            precoProdutos.innerText = preco
+            precoProdutos.innerText = `R$ ${preco},00`
             precoProdutos.id = 'preco'
 
             const imgAddCard = document.createElement('img')
@@ -56,20 +60,32 @@ class Produtos{
                 const imgProdutoCarrinho = document.createElement('img')
                 imgProdutoCarrinho.src = e.target.parentElement.childNodes[0].src
                 imgProdutoCarrinho.id = 'imagemProdutoNoCarrinho'
-
-
-               this.produtos = {
-
+                
+           
+               this.valorLocal++
+               this.localProdutos.push({ 
                    imagem: e.target.parentElement.childNodes[0].src
-               }
-               localStorage.setItem('produtos', this.produtos)
-               console.log(this.produtos)
-               
-              
+               })
+               localStorage.setItem((`produtos${this.valorLocal}`), JSON.stringify(this.localProdutos))
+               /*
+               Api extra, todos jogados no local storage, serão chamados dentro dessa classe para serem consumidos pela api
+               acredito não haver nenhuma interação visual para o usuário
+               */
                         carrinho.appendChild(criarUL)
                                 criarUL.appendChild(criarLi)
                                     criarLi.appendChild(imgProdutoCarrinho)
             })
+
+                this.DataBase.push({
+                    id: id,
+                    imagem: imagem,
+                    nome: nome, 
+                    descricao: descricao,
+                    categoria: categoria,
+                    preco: preco,
+                })
+                console.log(this.DataBase)
+      
 
             section.appendChild(ul)
                 ul.appendChild(li)
@@ -83,9 +99,14 @@ class Produtos{
         })
     }
 
-    static compararArray(){
+    static controleArray(){
+        /*
+        essa classe é apenas de controle para que a estilização possa ser retomarda ao normal, caso o comprimento do array seja vazio ou zero
 
+        */
     }
+
+
 }
 
 
