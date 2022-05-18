@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./dashboard.css">
+  <link rel="stylesheet" href="/src/styles/dashboard.css">
   <link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet'>
+
+  <link rel="stylesheet" href="/src/styles/modal.css">
+
 </head>
-<body>
+
+<body id="secaoPrincipal">
 
   <header>
     <h1>Kenzie Food</h1>
@@ -26,7 +31,7 @@
     </section>
 
     <aside>
-      <p>Adicionar novo produto</p>
+      <p class="btnAdicionarProduto" id="btnAdicionarProduto">Adicionar novo produto</p>
     </aside>
 
     <section>
@@ -38,19 +43,8 @@
       </div>
 
       <ul class="lista-produtos">
-        <li>
-          <img id="foto-produto" src="./imgs/foto-produto-tabela.png" alt=""> 
-          <p id="nome-produto">Aqui vai o nome do produto</p>
-          <span id="categoria-produto">Bebidas</span>          
-          <p id="descricao-produto">Aqui vai a descrição do produto...</p>
-          <div id="acoes">
-            <img id="editar" src="./imgs/icone-editar-dashboard.png" alt="">
-            <img id="excluir" src="./imgs/icone-excluir-dashboard.png" alt="">
-          </div>
-        </li><!--gerar dinamicamente-->
-
-        <li>
-          <img id="foto-produto" src="./imgs/foto-produto-tabela.png" alt=""> 
+        <!-- <li>
+          <img id="foto-produto" src="./imgs/foto-produto-tabela.png" alt="">
           <p id="nome-produto">Aqui vai o nome do produto</p>
           <span id="categoria-produto">Bebidas</span>
           <p id="descricao-produto">Aqui vai a descrição do produto...</p>
@@ -58,10 +52,17 @@
             <img id="editar" src="./imgs/icone-editar-dashboard.png" alt="">
             <img id="excluir" src="./imgs/icone-excluir-dashboard.png" alt="">
           </div>
-        </li>
+        </li> -->
+
+
+       
       </ul>
     </section>
   </main>
-  
+
+  <script type="module" src="/src/js e handlers/handlers.js"></script>
+  <script type="module" src="/src/models/PrivadoUser.js"></script>
+
 </body>
+
 </html>

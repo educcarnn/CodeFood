@@ -87,7 +87,9 @@ class Privados{
         const produtos = await fetch(`${URL}/my/products`, {
             method: "GET",
             headers: {
-                "Authorization": `Bearer ${localStorage.getItem('token')}`
+                /* valor chumbado para testes*/
+                /* Situação normal é getitem do localstorage com token*/
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3YzRlZDc1LTRkNDQtNDM1YS1hMWQ3LTU0ZGUyMzUzZmQwOSIsImlhdCI6MTY1Mjc1OTE4NSwiZXhwIjoxNjUzNjIzMTg1LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.7zJRmCbFdIu5hbdXfz56bwqt7twLLa1R_9HJPXts74o`
             }
         })
         const data = await produtos.json()
@@ -138,10 +140,13 @@ class Privados{
         .then(response => console.log(response))
         .catch(err => console.error(err));
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 218e79fb49d6b4951ef9efb831b1974669290305
 }
 
 export {ListarProdutos}
 export {Cadastro}
 export {Login}
-// Exports privados
 export {Privados}

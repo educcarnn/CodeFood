@@ -7,55 +7,8 @@ li {
   margin-left: 30px;
 }
 
-@media (min-width: 320px) {
-  /*Body*/
-  #edicaoMobile{
-      margin: -54px;
-  }
-  /*H1*/
-  #textoFooter{
-      margin-left: 80px;
-      margin-bottom: 70px;
-      margin-top: 57px;
-  }
-  #textoFood {
-      font-weight: 700;
-      color: red;
-      font-size: 16px;
-      padding-left: 112px;
-      margin-top: -56px;
-  }
-  #textoKenzie {
-      font-weight: 700;
-  }
-  /*Input pesquisar*/
-  #blocoInputMobile{
-      margin-top: -45px;
-      margin-left: 40px;
-  }
-  #inputMobile{
-      border-radius: 6px;
-      font-family: 'Poppins';
-      width: 230px;
-      height: 39px;
-      padding-left: 46px;
-      margin-left: 35px;
-  }
-  #botaoPesquisarMobile{
-      margin: -5px -270px;
-  }
-  /*Botoes de pesquisar*/
-  #blocoBotoesHome{
-      display: flex;
-      flex-direction: row;
-      margin-left: 4px;
-  }
-  #ulItens{
-      display: flex;
-  }
 
-  }
-@media (min-width: 1200px) {
+
   header{
     width: 100vw;
     height: 72px;
@@ -135,8 +88,10 @@ li {
     width: 320px;
     height: 56px;
     display: flex;
+    margin-left: 10px;
     align-items: center;
     justify-content: center;
+    margin-left: -1px;
   }
   
   section > aside > div > h3{
@@ -221,8 +176,8 @@ li {
     margin-left: 115px;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: -300px;
-    margin-left: 69px;
+    margin-top: -325px;
+    margin-left: -8px;
   }
   
   li{
@@ -298,4 +253,14 @@ li {
   
     cursor: pointer;
   }
+
+#botaoAdd{
+  width: 50px;
+  height: 50px;
+  margin-top: -59px;
+  margin-left: 244px;
+  border: none;
+}
+#produtosFilhos{
+  margin-right: -103px;
 }
