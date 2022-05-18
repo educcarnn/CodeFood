@@ -1,3 +1,5 @@
+import { Modals } from './../js e handlers/dom.js'
+
 class ListarProdutos{
     static BASE_URL = 'https://api-kenzie-food.herokuapp.com'
     static async metodoGet(){
@@ -37,6 +39,7 @@ class Cadastro{
     })
     }
 }
+
 class Login {
     static BASE_URL = "https://api-kenzie-food.herokuapp.com"
     
@@ -74,6 +77,7 @@ class Login {
             
     }  
 }
+
 /// Rotas Privadas
 class Privados{
     
