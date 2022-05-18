@@ -6,9 +6,9 @@ class ProdutosCriados{
         const ul = document.querySelector('.lista-produtos')
         console.log(itemsPrivados)
         itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
-            
+
             const li = document.createElement('li')
-            console.log(id)
+            li.productId = id
 
             const imagemProdutoPrivado = document.createElement('img')
             imagemProdutoPrivado.src = imagem
@@ -16,7 +16,6 @@ class ProdutosCriados{
 
             const nomeProdutoPrivado = document.createElement('p')
             nomeProdutoPrivado.innerText = nome
-            nomeProdutoPrivado.value = id
             nomeProdutoPrivado.id = 'nome-produto'
 
             const categoriaProdutoPrivado = document.createElement('span')
