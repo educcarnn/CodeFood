@@ -80,6 +80,7 @@ class Login {
 
 /// Rotas Privadas
 class Privados{
+    
     static async listarProdutosGet(){
         const URL = "https://api-kenzie-food.herokuapp.com"
  
@@ -139,7 +140,6 @@ class Privados{
         .then(response => console.log(response))
         .catch(err => console.error(err));
     }
-
 }
 
 export {ListarProdutos}

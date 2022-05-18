@@ -1,4 +1,3 @@
-
 import { Modals } from './dom.js'
 
 const btnAdicionarProduto = document.getElementById('btnAdicionarProduto')
@@ -16,7 +15,3 @@ ul.addEventListener('click', function(event){
     Modals.modalExcluirProduto(productId)
   }
 })
-
-
-
-

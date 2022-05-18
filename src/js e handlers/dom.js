@@ -206,10 +206,8 @@ class Modals{
     })
   }
 
-
   static modalExcluirProduto(productId){
 
-    console.log(id)
     const backGroundModalExcluir = document.createElement('div')
     backGroundModalExcluir.classList = 'backGroundModalExcluir'
 
@@ -246,8 +244,6 @@ class Modals{
 
     const btnSim = document.createElement('button')
     btnSim.classList = 'btnSim'
-    //btnSim.id = await ProdutosCriados.metodoGet()
-    
     btnSim.innerText = 'Sim'
 
     const btnNao = document.createElement('button')
@@ -256,9 +252,9 @@ class Modals{
 
     containerBtnsExclusao.append(btnSim, btnNao)
 
-    modalExclusaoProduto.addEventListener('click', async function(event){
+    modalExclusaoProduto.addEventListener('click', function(event){
       const clicouFechar = event.target.classList
-
+    
       if(clicouFechar[0] === 'btnNao' || clicouFechar[0] === 'btnFecharCadasto'){
         secaoPrincipal.removeChild(backGroundModalExcluir)
       } 
@@ -268,12 +264,6 @@ class Modals{
           location.reload()
         }, 1000);
       }
-
-
-    })
-    btnSim.addEventListener('click', (e) =>{
-        const valor = e.target.id  
-      
     })
 
   }
