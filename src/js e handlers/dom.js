@@ -1,9 +1,9 @@
 
+const secaoPrincipal = document.getElementById('secaoPrincipal')
+
 class Modals{
 
   static modalCadastroProduto(){
-
-    const secaoPrincipal = document.getElementById('secaoPrincipal')
 
     const backGroundModal = document.createElement('div')
     backGroundModal.classList = 'backGroundModal'
@@ -131,7 +131,7 @@ class Modals{
 
     formularioCadastroProduto.appendChild(btnCadastrar)
 
-    secaoPrincipal.appendChild(backGroundModal)
+    secaoPrincipal.append(backGroundModal)
 
     btnFecharCadasto.addEventListener('click', function(event){
       const clicouFechar = event.target.classList
@@ -142,6 +142,71 @@ class Modals{
     })
 
   }
-}
 
+  static modalLogin(){
+
+    const backGroundModal = document.createElement('div')
+    backGroundModal.classList = 'backGroundModal'
+
+    secaoPrincipal.append(backGroundModal)
+
+    const modalLogin = document.createElement('div')
+    modalLogin.classList = 'containerModal usuarioNaoCadastrado'
+
+    backGroundModal.appendChild(modalLogin)
+
+    const btnFecharModal = document.createElement('button')
+    btnFecharModal.classList = 'btnFecharModal'
+    btnFecharModal.innerText = 'X'
+
+    const tituloLogin = document.createElement('h2')
+    tituloLogin.classList = 'modalTituloLogin'
+    tituloLogin.innerText = 'Login'
+
+    const formularioLogin = document.createElement('form')
+    formularioLogin.classList = 'formularioLogin'
+    formularioLogin.ariaRequired = 'true'
+
+    modalLogin.append(btnFecharModal, tituloLogin, formularioLogin)
+
+    const inputEmail = document.createElement('input')
+    inputEmail.type = 'email'
+    inputEmail.name = 'name'
+    inputEmail.classList = 'inputs'
+    inputEmail.placeholder = 'E-mail'
+
+    const inputSenha = document.createElement('input')
+    inputSenha.type = 'password'
+    inputSenha.name = 'password'
+    inputSenha.classList = 'inputs'
+    inputSenha.placeholder = 'Senha'
+
+    const containerCadastrese = document.createElement('div')
+
+    const textoCadastrar = document.createElement('span')
+    textoCadastrar.classList = 'textoCadastrar'
+    textoCadastrar.innerHTML = 'Ainda não é cadastrado? <a href="">Cadastre-se agora!</a>'
+
+    containerCadastrese.appendChild(textoCadastrar)
+
+    const btnLogin = document.createElement('button')
+    btnLogin.type = 'submit'
+    btnLogin.classList = 'btnLoginModal'
+    btnLogin.innerText = 'Login'
+
+    formularioLogin.append(inputEmail, inputSenha, containerCadastrese, btnLogin)
+
+    
+
+    btnFecharModal.addEventListener('click', function(event){
+      const clicouFechar = event.target.classList
+
+      if(clicouFechar[0] === 'btnFecharModal'){
+        secaoPrincipal.removeChild(backGroundModal)
+      }
+    })
+  }
+
+}
+ 
 export { Modals }
