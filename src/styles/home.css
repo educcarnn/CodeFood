@@ -264,3 +264,15 @@ li {
 #produtosFilhos{
   margin-right: -103px;
 }
+
+/*Produtos carrinho*/
+#ulCarrinho{
+  width: 300px;
+  height: 300px;
+  margin-left: -200px;
+  margin-top: -20px;
+}
+#imagemProdutoNoCarrinho{
+  width: 70px;
+  height: 70px;
+}
