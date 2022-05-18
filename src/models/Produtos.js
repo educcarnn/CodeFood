@@ -9,11 +9,13 @@ class Produtos{
     static quantidade = 0
 
     static DataBase = []
+    
 
     static valorLocal = 0
     static localProdutos = []
     
     static mostrarProdutos(items) {
+
         const ul = document.createElement('ul')
         ul.id = 'lista-de-cards'
         items.forEach(({id, imagem, nome, descricao, categoria, preco}) => {
@@ -100,14 +102,14 @@ class Produtos{
                                     
             })
 
-                this.DataBase.push({
-                    id: id,
-                    imagem: imagem,
-                    nome: nome, 
-                    descricao: descricao,
-                    categoria: categoria,
-                    preco: preco,
-                })
+                // this.DataBase.push({
+                //     id: id,
+                //     imagem: imagem,
+                //     nome: nome, 
+                //     descricao: descricao,
+                //     categoria: categoria,
+                //     preco: preco,
+                // })
                 
       
 
@@ -136,9 +138,10 @@ class Produtos{
 
 
 const produtos = await ListarProdutos.metodoGet()
+Produtos.DataBase = produtos
 Produtos.mostrarProdutos(produtos)
 
-
+export { Produtos }
 
 
 
