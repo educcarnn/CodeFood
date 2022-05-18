@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./dashboard.css">
+  <link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet'>
+</head>
+<body>
+
+  <header>
+    <h1>Kenzie Food</h1>
+    <input type="search" id="input-pesquisar" placeholder="Pesquisar por produto" name="input-pesquisar">
+  </header>
+
+  <main>
+    <section class="container-filtros">
+      <menu id="botoes-filtros">
+        <li>Todos</li>
+        <li><img src="./imgs/icone-panificadora.png" alt="">Panificadora</li>
+        <li><img src="./imgs/icone-frutas.png" alt="">Frutas</li>
+        <li><img src="./imgs/icone-bebidas.png" alt="">Bebidas</li>
+      </menu>
+    </section>
+
+    <aside>
+      <p>Adicionar novo produto</p>
+    </aside>
+
+    <section>
+      <div class="cabecalho">
+        <p>Produto</p>
+        <p>Categorias</p>
+        <p>Descrição</p>
+        <p>Ações</p>
+      </div>
+
+      <ul class="lista-produtos">
+        <li>
+          <img id="foto-produto" src="./imgs/foto-produto-tabela.png" alt=""> 
+          <p id="nome-produto">Aqui vai o nome do produto</p>
+          <span id="categoria-produto">Bebidas</span>          
+          <p id="descricao-produto">Aqui vai a descrição do produto...</p>
+          <div id="acoes">
+            <img id="editar" src="./imgs/icone-editar-dashboard.png" alt="">
+            <img id="excluir" src="./imgs/icone-excluir-dashboard.png" alt="">
+          </div>
+        </li><!--gerar dinamicamente-->
+
+        <li>
+          <img id="foto-produto" src="./imgs/foto-produto-tabela.png" alt=""> 
+          <p id="nome-produto">Aqui vai o nome do produto</p>
+          <span id="categoria-produto">Bebidas</span>
+          <p id="descricao-produto">Aqui vai a descrição do produto...</p>
+          <div id="acoes">
+            <img id="editar" src="./imgs/icone-editar-dashboard.png" alt="">
+            <img id="excluir" src="./imgs/icone-excluir-dashboard.png" alt="">
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  
+</body>
+</html>
