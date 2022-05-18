@@ -1,17 +1,17 @@
-<<<<<<< HEAD
+
 //HANDLER DA PAGINA PRINCIPAL DO USUARIO NÃO LOGADO
 
 =======
 
 import { ListarProdutos } from '../models/Api.js'
->>>>>>> e1e656313cf584e8397b27e703f016336469ecba
 import { Modals } from './dom.js'
 import { Produtos } from '../models/Produtos.js'
 
 
+
 const btnLogar = document.querySelector('.btnLoginHome')
 
-<<<<<<< HEAD
+
 btnLogar.addEventListener('click', function(event){
   const clicouLogin = event.target.classList
   console.log(clicouLogin[0] === 'btnLoginHome')
@@ -20,6 +20,16 @@ btnLogar.addEventListener('click', function(event){
     Modals.modalLogin()
   }
 })
+
+
+/*
+const btnAdicionarProduto = document.getElementById('btnAdicionarProduto')
+const ul = document.querySelector('.lista-produtos')
+*/
+// btnAdicionarProduto.addEventListener('click', function(){
+//   Modals.modalCadastroProduto()
+// })
+
 
 =======
 // btnAdicionarProduto.addEventListener('click', function(){
@@ -36,9 +46,9 @@ function pesquisaInstantanea(palavraPesquisada){
   const containerProdutos = document.querySelector('.container-cards')
   containerProdutos.innerHTML = ''
   let produtoFiltrado = Produtos.DataBase.filter(produto => produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) || produto.categoria.toLowerCase().includes(palavraPesquisada.toLowerCase()))
+
   Produtos.mostrarProdutos(produtoFiltrado)
 }
->>>>>>> e1e656313cf584e8397b27e703f016336469ecba
 
 
 
