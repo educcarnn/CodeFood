@@ -307,7 +307,7 @@
   margin-bottom: 3vh;
 }
 
-.btnSimNaoClicado{
+.btnSim:hover, .btnNao:hover{
   width: 30vh;
   height: 7vh;
   border-radius: 30px;
@@ -315,6 +315,7 @@
   background-color: #FF2253;
   color: white;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .btnSim, .btnNao{
@@ -325,6 +326,7 @@
   background-color: #F8F9FA;
   color: #868E96;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 /* MODALs STATUS*/
