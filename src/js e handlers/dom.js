@@ -185,8 +185,7 @@ class Modals{
 
     const textoCadastrar = document.createElement('span')
     textoCadastrar.classList = 'textoCadastrar'
-    textoCadastrar.innerText = 'Ainda não é cadastrado?'
-    textoCadastrar.innerHTML = '<a href="">Cadastre-se agora!</a>'
+    textoCadastrar.innerHTML = 'Ainda não é cadastrado? <a href="">Cadastre-se agora!</a>'
 
     containerCadastrese.appendChild(textoCadastrar)
 
@@ -209,5 +208,5 @@ class Modals{
   }
 
 }
-
+ 
 export { Modals }
