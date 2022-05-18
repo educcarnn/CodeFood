@@ -140,4 +140,5 @@ class Produtos{
 const produtos = await ListarProdutos.metodoGet()
 Produtos.DataBase = produtos
 Produtos.mostrarProdutos(produtos)
+
 export { Produtos }
