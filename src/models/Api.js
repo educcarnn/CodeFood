@@ -86,16 +86,21 @@ class Privados{
         const produtos = await fetch(`${URL}/my/products`, {
             method: "GET",
             headers: {
-                "Authorization": `Bearer ${localStorage.getItem('token')}`
+                /* valor chumbado para testes*/
+                /* Situação normal é getitem do localstorage com token*/
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3YzRlZDc1LTRkNDQtNDM1YS1hMWQ3LTU0ZGUyMzUzZmQwOSIsImlhdCI6MTY1Mjc1OTE4NSwiZXhwIjoxNjUzNjIzMTg1LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.7zJRmCbFdIu5hbdXfz56bwqt7twLLa1R_9HJPXts74o`
             }
         })
         const data = await produtos.json()
         return data
     }
+
+    
+
 }
 
 export {ListarProdutos}
 export {Cadastro}
 export {Login}
-// Exports privados
 export {Privados}
+// Exports privados

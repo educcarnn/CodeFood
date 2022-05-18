@@ -1,13 +1,12 @@
 import { ListarProdutos } from '../models/Api.js';
 
-const produtos = await ListarProdutos.metodoGet()
 const section = document.querySelector('.container-cards')
 
 class Produtos{
-    static mostrarProdutos() {
+    static mostrarProdutos(items) {
         const ul = document.createElement('ul')
         ul.id = 'lista-de-cards'
-        produtos.forEach(({imagem, nome, descricao, categoria, preco}) => {
+        items.forEach(({imagem, nome, descricao, categoria, preco}) => {
 
             const li = document.createElement('li')
             li.classList.add('card-produto')
@@ -40,4 +39,8 @@ class Produtos{
     }
 }
 
-export {Produtos}
+const produtos = await ListarProdutos.metodoGet()
+Produtos.mostrarProdutos(produtos)
+
+
+
