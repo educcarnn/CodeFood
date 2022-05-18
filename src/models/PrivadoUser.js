@@ -6,9 +6,12 @@ class ProdutosCriados{
 
     static async metodoGet(itemsPrivados) {
         const ul = document.querySelector('.lista-produtos')
-      itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
-            
+
+        console.log(itemsPrivados)
+        itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
+
             const li = document.createElement('li')
+            li.productId = id
 
             const imagemProdutoPrivado = document.createElement('img')
             imagemProdutoPrivado.src = imagem
@@ -16,7 +19,6 @@ class ProdutosCriados{
 
             const nomeProdutoPrivado = document.createElement('p')
             nomeProdutoPrivado.innerText = nome
-            nomeProdutoPrivado.classList.add(id)
             nomeProdutoPrivado.id = 'nome-produto'
 
             const categoriaProdutoPrivado = document.createElement('span')

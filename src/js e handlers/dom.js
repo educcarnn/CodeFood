@@ -1,3 +1,4 @@
+import { Privados } from "../models/Api.js"
 
 const secaoPrincipal = document.getElementById('secaoPrincipal')
 
@@ -205,7 +206,8 @@ class Modals{
     })
   }
 
-  static async modalExcluirProduto(id){
+
+  static modalExcluirProduto(productId){
 
     console.log(id)
     const backGroundModalExcluir = document.createElement('div')
@@ -259,6 +261,12 @@ class Modals{
 
       if(clicouFechar[0] === 'btnNao' || clicouFechar[0] === 'btnFecharCadasto'){
         secaoPrincipal.removeChild(backGroundModalExcluir)
+      } 
+      else if(clicouFechar[0] === 'btnSim'){
+        Privados.deletarProdutos(productId)
+        setTimeout(() => {
+          location.reload()
+        }, 1000);
       }
 
 
@@ -268,13 +276,234 @@ class Modals{
       
     })
 
-
-
   }
 
   static modalStatusCadastrado(){
 
+    const containerModalStatus = document.createElement('div')
+    containerModalStatus.classList = 'containerModalStatus'
+    
+    const status = document.createElement('div')
+    status.classList = 'status'
+    
+    containerModalStatus.appendChild(status)
+
+    const textoStauts = document.createElement('p')
+    textoStauts.classList = 'textoStatus'
+    textoStauts.innerText = 'Status'
+
+    const btnFecharStatus = document.createElement('button')
+    btnFecharStatus.classList = 'fecharModalStatus'
+    btnFecharStatus.innerText = 'X'
+
+    status.append(textoStauts, btnFecharStatus)
+
+    const containerInformacaoStatus = document.createElement('div')
+    containerInformacaoStatus.classList = 'containerInformacaoStatus'
+
+    containerModalStatus.appendChild(containerInformacaoStatus)
+
+    const textoAdd = document.createElement('div')
+    textoAdd.classList = 'textoStatus'
+    textoAdd.innerText = 'Produto adicionado com sucesso'
+
+    containerInformacaoStatus.appendChild(textoAdd)
+
+    const linhaVerde = document.createElement('div')
+    linhaVerde.classList = 'linhaVerde'
+
+    containerModalStatus.appendChild(linhaVerde)
+
+    secaoPrincipal.appendChild(containerModalStatus)
+
+     btnFecharStatus.addEventListener('click', () => {
+        secaoPrincipal.removeChild(containerModalStatus)
+     })
+
+  }
+
+  static modalStatusNaoCadastrado(){
+    const containerModalStatus = document.createElement('div')
+    containerModalStatus.classList = 'containerModalStatus'
+    
+    const status = document.createElement('div')
+    status.classList = 'status'
+    
+    containerModalStatus.appendChild(status)
+
+    const textoStauts = document.createElement('p')
+    textoStauts.classList = 'textoStatus'
+    textoStauts.innerText = 'Status'
+
+    const btnFecharStatus = document.createElement('button')
+    btnFecharStatus.classList = 'fecharModalStatus'
+    btnFecharStatus.innerText = 'X'
+
+    status.append(textoStauts, btnFecharStatus)
+
+    const containerInformacaoStatus = document.createElement('div')
+    containerInformacaoStatus.classList = 'containerInformacaoStatus'
+
+    containerModalStatus.appendChild(containerInformacaoStatus)
+
+    const textoAdd = document.createElement('div')
+    textoAdd.classList = 'textoStatus'
+    textoAdd.innerText = 'Ocorreu algum erro, o produto não foi adicionado'
+
+    containerInformacaoStatus.appendChild(textoAdd)
+
+    const linhaVerde = document.createElement('div')
+    linhaVerde.classList = 'linhaVermelha'
+
+    containerModalStatus.appendChild(linhaVerde)
+
+    secaoPrincipal.appendChild(containerModalStatus)
+
+     btnFecharStatus.addEventListener('click', () => {
+        secaoPrincipal.removeChild(containerModalStatus)
+     })
+  }
+
+  static editarProduto(){
+    const backGroundModal = document.createElement('div')
+    backGroundModal.classList = 'backGroundModal'
+    
+    const modalCadastroProduto = document.createElement('div')
+    modalCadastroProduto.classList = 'modalCadastroProduto'
+    backGroundModal.appendChild(modalCadastroProduto)
+
+    const headerModalCadastroProduto = document.createElement('div')
+    headerModalCadastroProduto.classList = 'headerModalCadastroProduto'
+    modalCadastroProduto.appendChild(headerModalCadastroProduto)
+
+    const tituloCadastroProduto = document.createElement('h3')
+    tituloCadastroProduto.classList = 'tituloCadastroProduto'
+    tituloCadastroProduto.innerText = 'Cadastro de Produto'
+
+    const btnFecharCadasto = document.createElement('button')
+    btnFecharCadasto.classList = 'btnFecharCadasto'
+    btnFecharCadasto.innerText = 'X'
+
+    headerModalCadastroProduto.append(tituloCadastroProduto, btnFecharCadasto)
+
+    const formularioCadastroProduto = document.createElement('form')
+    formularioCadastroProduto.classList = 'formularioCadastroProduto'
+    formularioCadastroProduto.ariaRequired = 'true'
+    modalCadastroProduto.appendChild(formularioCadastroProduto)
+
+    const containerCategoria = document.createElement('div')
+    containerCategoria.classList = 'containerCategoria'
+    formularioCadastroProduto.appendChild(containerCategoria)
+
+    const categoriaProduto = document.createElement('label')
+    categoriaProduto.classList = 'categoriaTitulo'
+    categoriaProduto.innerText = 'Nome do produto'
+
+    const inputNome = document.createElement('input')
+    inputNome.classList = 'categoria'
+    inputNome.type = 'text'
+    inputNome.name = 'nome'
+    inputNome.placeholder = 'Digite o nome'
+    inputNome.ariaRequired = 'true'
+
+    containerCategoria.append(categoriaProduto, inputNome)
+
+    const containerCategoria2 = document.createElement('div')
+    containerCategoria2.classList = 'containerCategoria'
+
+    formularioCadastroProduto.appendChild(containerCategoria2)
+
+    const categoriaDescricao = document.createElement('label')
+    categoriaDescricao.classList = 'categoriaTitulo'
+    categoriaDescricao.innerText = 'Categorias'
+
+    const inputDescricao = document.createElement('input')
+    inputDescricao.type = 'text'
+    inputDescricao.name = 'descricao'
+    inputDescricao.placeholder = 'Digite a descrição'
+    inputDescricao.classList = 'categoria descricao'
+    inputDescricao.ariaRequired = 'true'
+
+    containerCategoria2.append(categoriaDescricao, inputDescricao)
+
+    const containerCategoria3 = document.createElement('div')
+    containerCategoria3.classList = 'containerCategoria'
+
+    formularioCadastroProduto.appendChild(containerCategoria3)
+
+    const categoriaCategorias = document.createElement('label')
+    categoriaCategorias.classList = 'categoriaTitulo'
+    categoriaCategorias.innerText = 'Categorias'
+
+    const categoriaBtn = document.createElement('div')
+    categoriaBtn.classList = 'categoriaBtn'
+
+    containerCategoria3.append(categoriaCategorias, categoriaBtn)
+
+    const btnPanificadora = document.createElement('button')
+    btnPanificadora.type = 'button'
+    btnPanificadora.id = 'panificadora'
+    btnPanificadora.name = 'categoria'
+    btnPanificadora.classList = 'btnCategoria'
+    btnPanificadora.value = 'panificadora'
+    btnPanificadora.innerText = 'Panificadora'
+
+    const btnFrutas = document.createElement('button')
+    btnFrutas.type = 'button'
+    btnFrutas.id = 'frutas'
+    btnFrutas.name = 'categoria'
+    btnFrutas.classList = 'btnCategoria'
+    btnFrutas.value = 'frutas'
+    btnFrutas.innerText = 'Frutas'
+
+    const btnBebidas = document.createElement('button')
+    btnBebidas.type = 'button'
+    btnBebidas.id = 'bebidas'
+    btnBebidas.name = 'categoria'
+    btnBebidas.classList = 'btnCategoria'
+    btnBebidas.value = 'bebidas'
+    btnBebidas.innerText = 'Bebidas'
+
+    categoriaBtn.append(btnPanificadora, btnFrutas, btnBebidas)
+
+    const containerCategoria4 = document.createElement('div')
+    containerCategoria4.classList = 'containerCategoria'
+
+    formularioCadastroProduto.appendChild(containerCategoria4)
+
+    const categoriaImg = document.createElement('label')
+    categoriaImg.classList = 'categoriaTitulo'
+    categoriaImg.innerText = 'Link da imagem'
+
+    const inputImg = document.createElement('input')
+    inputImg.type = 'text'
+    inputImg.name = 'imagem'
+    inputImg.placeholder = 'Insira seu link'
+    inputImg.classList = 'categoria'
+    inputImg.ariaRequired = 'true'
+
+    containerCategoria4.append(categoriaImg, inputImg)
+
+    const containerBtnSubmit = document.createElement('div')
+    containerBtnSubmit.classList = 'containerBtnSubmit'
+
+    formularioCadastroProduto.appendChild(containerBtnSubmit)
+
+    const btnExcluir = document.createElement('button')
+    btnExcluir.type = 'submit'
+    btnExcluir.classList = 'btnExcluir'
+    btnExcluir.innerText = 'Excluir'
+
+    const btnSalvar = document.createElement('button')
+    btnSalvar.type = 'submit'
+    btnSalvar.classList = 'btnSalvar'
+    btnSalvar.innerText = 'Salvar'
+
+    containerBtnSubmit.append(btnExcluir, btnSalvar)
+
+    secaoPrincipal.appendChild(backGroundModal)
   }
 }
- 
+
+
 export { Modals }
