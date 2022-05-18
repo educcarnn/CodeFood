@@ -95,16 +95,14 @@ class Privados{
     }
 
 
-
     /*
     duas formas de fazer o poat 
 
     */
-    static async criarProdutosPost() {
-        let contador = 0
+    static async criarProdutosPost(dadosProduto, id) {
         const URL = "https://api-kenzie-food.herokuapp.com"
         
-        await fetch(``{
+        await fetch(`${}`{
 
         })
     }
