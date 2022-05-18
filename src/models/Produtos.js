@@ -44,11 +44,11 @@ class Produtos{
                 caso ele pare na primeira parte do get e não faça mais nada
                 2 - Criar uma varíavel contadora e comparar array caso esteja vazio, resetar a variável
                 */
-
-
                console.log(carrinho.parentElement.childNodes)
                this.produtos = {
-                   //teste: carrinho.parentElement[0].value
+                  //nome:
+                  //preco:
+                  //categoria 
                }
                console.log(this.produtos)
             })
