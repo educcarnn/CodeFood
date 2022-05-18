@@ -6,17 +6,19 @@
   <title>Kenzie Food</title>
   <link rel="stylesheet" href="/src/styles/reset.css">
   <link rel="stylesheet" href="/src/styles/home.css">
+  <link rel="stylesheet" href="/src/styles/modal.css">
   
   <link rel='preconnect' href='https://fonts.googleapis.com'>
   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
   <link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet'>
 
-<body>
+<body id="secaoPrincipal">
   <header>
     <h1>Kenzie Food</h1>
     <div class="containerLogin" >
       <input type="search" class="input-campo" placeholder="Pesquisar por produto" name="input-pesquisar">
-      <button class="btnLoginHome">Login</button>
+      <button class="btnAdmin btnLogoutHome">Logout</button>
+      <button class="btnAdmin btnDashboard">Dashboard</button>
     </div>
   </header>
 
@@ -58,10 +60,9 @@
       </ul><!--id="lista-de-cards"-->
     </section><!--class="container-cards"-->
 
-    <script type="module" src="/src/models/Vitrine.js"></script>
     <script type='module' src='/src/models/Api.js'></script>
     <script type='module' src='/src/models/Produtos.js'></script>
-    <script type='module' src='/src/js e handlers/script.js'></script>
+    <script type='module' src='/src/js e handlers/handlerHomeAdmin.js'></script>
   </main>
 </body>
 </html>

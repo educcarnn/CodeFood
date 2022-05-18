@@ -52,7 +52,7 @@ li {
     margin-right: 50px;
   }
 
-.btnLoginHome{
+.btnLoginHome, .btnAdmin{
   font-family: 'Poppins';
   font-weight: 700;
   font-size: 16px;
@@ -66,7 +66,7 @@ li {
   margin-right: 50px;
 }
 
-.btnLoginHome:hover{
+.btnLoginHome:hover, .btnAdmin{
   width: 20vh;
   height: 7vh;
   border-radius: 3vh;
