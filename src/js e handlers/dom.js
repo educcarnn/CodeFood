@@ -1,3 +1,6 @@
+import { Privados } from "../models/Api.js"
+import { ProdutosCriados } from "../models/PrivadoUser.js"
+
 
 const secaoPrincipal = document.getElementById('secaoPrincipal')
 
@@ -205,8 +208,9 @@ class Modals{
     })
   }
 
-  static modalExcluirProduto(){
+  static async modalExcluirProduto(id){
 
+    console.log(id)
     const backGroundModalExcluir = document.createElement('div')
     backGroundModalExcluir.classList = 'backGroundModalExcluir'
 
@@ -243,6 +247,8 @@ class Modals{
 
     const btnSim = document.createElement('button')
     btnSim.classList = 'btnSim'
+    //btnSim.id = await ProdutosCriados.metodoGet()
+    
     btnSim.innerText = 'Sim'
 
     const btnNao = document.createElement('button')
@@ -251,13 +257,18 @@ class Modals{
 
     containerBtnsExclusao.append(btnSim, btnNao)
 
-    modalExclusaoProduto.addEventListener('click', function(event){
+    modalExclusaoProduto.addEventListener('click', async function(event){
       const clicouFechar = event.target.classList
-      console.log(clicouFechar)
 
       if(clicouFechar[0] === 'btnNao' || clicouFechar[0] === 'btnFecharCadasto'){
         secaoPrincipal.removeChild(backGroundModalExcluir)
       }
+
+
+    })
+    btnSim.addEventListener('click', (e) =>{
+        const valor = e.target.id  
+      
     })
 
 
