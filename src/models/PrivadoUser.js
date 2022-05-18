@@ -1,15 +1,10 @@
-import { Modals } from "../js e handlers/dom.js"
+
 import { Privados } from "./Api.js"
-const secaoPrincipal = document.getElementById('secaoPrincipal')
+
 
 class ProdutosCriados{
-    static armazenarId = []
-
 
     static async metodoGet(itemsPrivados) {
-
-
-
         const ul = document.querySelector('.lista-produtos')
       itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
             
@@ -40,24 +35,8 @@ class ProdutosCriados{
                 //imgDivPrivado.src = 
                 const excluirDivPrivado = document.createElement('img')
                 excluirDivPrivado.id ='excluir'
-                this.armazenarId.push(id)
                 excluirDivPrivado.classList.add(id)
-                
-                /*
-                */
-                secaoPrincipal.addEventListener('click', (e)=> {
-                    const teste = e.target.classList
-                    console.log(teste)
-                    if(teste[0] === 'btnSim') {
-                  
-                        console.log(id)
-                        console.log(teste[0])
-                        //console.log(btnSim)
-                    Privados.deletarProdutos(id)
-                        //location.reload()
-                    }
-                })
-                
+
 
               
             ul.appendChild(li)
@@ -71,22 +50,9 @@ class ProdutosCriados{
 
          })
 
-         secaoPrincipal.addEventListener('click', (e)=> {
-            const teste = e.target.classList
-            console.log(teste)
-            if(teste[0] === 'btnSim') {
-          
-                console.log(this.armazenarId)
-                console.log(teste[0])
-                //console.log(btnSim)
-            Privados.deletarProdutos(this.armazenarId)
-                //location.reload()
-            }
-        })
+         
     }
 }
 
 const produtosPrivados = await Privados.listarProdutosGet()
 ProdutosCriados.metodoGet(produtosPrivados)
-
-export {ProdutosCriados}

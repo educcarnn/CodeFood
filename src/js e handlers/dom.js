@@ -1,6 +1,3 @@
-import { Privados } from "../models/Api.js"
-import { ProdutosCriados } from "../models/PrivadoUser.js"
-
 
 const secaoPrincipal = document.getElementById('secaoPrincipal')
 
