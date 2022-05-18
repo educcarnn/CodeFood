@@ -76,6 +76,7 @@ class Login {
 }
 /// Rotas Privadas
 class Privados{
+    
     static async listarProdutosGet(){
         const URL = "https://api-kenzie-food.herokuapp.com"
  
@@ -87,6 +88,21 @@ class Privados{
         })
         const data = await produtos.json()
         return data
+    }
+
+
+
+    /*
+    duas formas de fazer o poat 
+
+    */
+    static async criarProdutosPost() {
+        let contador = 0
+        const URL = "https://api-kenzie-food.herokuapp.com"
+        
+        await fetch(``{
+
+        })
     }
 }
 
