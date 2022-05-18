@@ -61,13 +61,15 @@ class Modals{
     inputDescricao.type = 'text'
     inputDescricao.name = 'descricao'
     inputDescricao.placeholder = 'Digite a descrição'
-    inputDescricao.classList = 'categoria'
+    inputDescricao.classList = 'categoria descricao'
     inputDescricao.ariaRequired = 'true'
 
     containerCategoria2.append(categoriaDescricao, inputDescricao)
 
     const containerCategoria3 = document.createElement('div')
     containerCategoria3.classList = 'containerCategoria'
+
+    formularioCadastroProduto.appendChild(containerCategoria3)
 
     const categoriaCategorias = document.createElement('label')
     categoriaCategorias.classList = 'categoriaTitulo'
@@ -105,7 +107,8 @@ class Modals{
     categoriaBtn.append(btnPanificadora, btnFrutas, btnBebidas)
 
     const containerCategoria4 = document.createElement('div')
-    containerCategoria3.classList = 'containerCategoria'
+    containerCategoria4.classList = 'containerCategoria'
+
     formularioCadastroProduto.appendChild(containerCategoria4)
 
     const categoriaImg = document.createElement('label')
@@ -126,7 +129,11 @@ class Modals{
     btnCadastrar.classList = 'btnCadastrar'
     btnCadastrar.innerText = 'Cadastrar'
 
+    formularioCadastroProduto.appendChild(btnCadastrar)
+
     secaoPrincipal.appendChild(backGroundModal)
+
+    console.log(secaoPrincipal)
   }
 }
 

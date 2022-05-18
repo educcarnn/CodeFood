@@ -68,7 +68,6 @@ class Login {
     }  
 }
 
-Modals.modalCadastroProduto()
 /// Rotas Privadas
 export {ListarProdutos}
 export {Cadastro}
