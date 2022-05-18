@@ -136,11 +136,11 @@ class Modals{
     btnFecharCadasto.addEventListener('click', function(event){
       const clicouFechar = event.target.classList
 
-      if(clicouFechar === 'btnFecharCadasto'){
+      if(clicouFechar[0] === 'btnFecharCadasto'){
         secaoPrincipal.removeChild(backGroundModal)
       }
     })
-    
+
   }
 }
 
