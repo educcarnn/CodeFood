@@ -1,10 +1,13 @@
 import { ListarProdutos } from '../models/Api.js';
 
 const section = document.querySelector('.container-cards')
+const statusCarrinhoVazio = document.querySelector('#mensagemStatusCarrinho')
+const criarUL = document.createElement('ul')
 
 class Produtos{
     static preco = 0
-    
+    static quantidade = 0
+
     static DataBase = []
 
     static valorLocal = 0
@@ -40,27 +43,43 @@ class Produtos{
             imgAddCard.src = "/src/styles/imgs/btnAddCard.svg"
             imgAddCard.id = "botaoAdd"
 
-            const criarUL = document.createElement('ul')
-            criarUL.id = 'ulCarrinho'
 
             imgAddCard.addEventListener('click', (e) =>{
-               
+               this.quantidade++
                const carrinho = document.querySelector('#corpo-carrinho')
-               criarUL.innerHTML = ''
-                /*
-                Extra
-                1 - Se toda vez que o produto for adicionado o localstorage, sobreescrever os valores dentro sem problemas,
-                caso ele pare na primeira parte do get e não faça mais nada
-                2 - Criar uma varíavel contadora e comparar array caso esteja vazio, resetar a variável
-                */
-               console.log(e.target.parentElement.childNodes)
+     
+               criarUL.id = 'ulCarrinho'
+
+               statusCarrinhoVazio.innerText = ''
+
                 const criarLi = document.createElement('li')
                 criarLi.id = 'liCarrinho'
 
                 const imgProdutoCarrinho = document.createElement('img')
                 imgProdutoCarrinho.src = e.target.parentElement.childNodes[0].src
                 imgProdutoCarrinho.id = 'imagemProdutoNoCarrinho'
+
+                const divInfosCarrinho = document.createElement('div')
+                divInfosCarrinho.id = 'divInfoCarrinho' 
+
+                const nomeProdutoCarrinho = document.createElement('h2')
+                nomeProdutoCarrinho.innerText = e.target.parentElement.childNodes[1].innerText
+                nomeProdutoCarrinho.classList.add(id)
+                nomeProdutoCarrinho.id = 'nomeProdutoCarrinho'   
+
+                const iconeRemover = document.createElement('img')
+                //iconeRemover.src = 
                 
+                iconeRemover.addEventListener('click', (e) =>{
+
+                })
+                const categoriaProdutoCarrinho = document.createElement('span')
+                categoriaProdutoCarrinho.innerText = e.target.parentElement.childNodes[3].innerText
+                categoriaProdutoCarrinho.id = "categoriaProdutoCarrinho"
+                
+                const precoProdutoCarrinho = document.createElement('span')
+                precoProdutoCarrinho.innerText = e.target.parentElement.childNodes[4].innerText
+
            
                this.valorLocal++
                this.localProdutos.push({ 
@@ -74,6 +93,11 @@ class Produtos{
                         carrinho.appendChild(criarUL)
                                 criarUL.appendChild(criarLi)
                                     criarLi.appendChild(imgProdutoCarrinho)
+                                    criarLi.appendChild(divInfosCarrinho)
+                                            divInfosCarrinho.appendChild(nomeProdutoCarrinho)
+                                            divInfosCarrinho.appendChild(categoriaProdutoCarrinho)
+                                            divInfosCarrinho.appendChild(precoProdutoCarrinho)
+                                    
             })
 
                 this.DataBase.push({
@@ -84,7 +108,7 @@ class Produtos{
                     categoria: categoria,
                     preco: preco,
                 })
-                console.log(this.DataBase)
+                
       
 
             section.appendChild(ul)
