@@ -196,8 +196,6 @@ class Modals{
 
     formularioLogin.append(inputEmail, inputSenha, containerCadastrese, btnLogin)
 
-    
-
     btnFecharModal.addEventListener('click', function(event){
       const clicouFechar = event.target.classList
 
@@ -207,6 +205,68 @@ class Modals{
     })
   }
 
+  static modalExcluirProduto(){
+
+    const backGroundModalExcluir = document.createElement('div')
+    backGroundModalExcluir.classList = 'backGroundModalExcluir'
+
+    secaoPrincipal.appendChild(backGroundModalExcluir)
+
+    const modalExclusaoProduto = document.createElement('div')
+    modalExclusaoProduto.classList = 'modalExclusaoProduto'
+
+    backGroundModalExcluir.appendChild(modalExclusaoProduto)
+
+    const headerModalExclusaoProduto = document.createElement('div')
+    headerModalExclusaoProduto.classList = 'headerModalExclusaoProduto'
+
+    modalExclusaoProduto.appendChild(headerModalExclusaoProduto)
+
+    const tituloExclusao = document.createElement('h3')
+    tituloExclusao.classList = 'tituloCadastroProduto'
+    tituloExclusao.innerText = 'Exclusão de produto'
+
+    const btnFecharExclusao = document.createElement('button')
+    btnFecharExclusao.classList = 'btnFecharCadasto'
+    btnFecharExclusao.innerText = 'X'
+
+    headerModalExclusaoProduto.append(tituloExclusao, btnFecharExclusao)
+
+    const textoExclusao = document.createElement('p')
+    textoExclusao.classList = 'textoExclusao'
+    textoExclusao.innerText = 'Tem certeza que deseja excluir este produto?'
+
+    const containerBtnsExclusao = document.createElement('div')
+    containerBtnsExclusao.classList = 'containerBtnExclusao'
+
+    modalExclusaoProduto.append(textoExclusao, containerBtnsExclusao)
+
+    const btnSim = document.createElement('button')
+    btnSim.classList = 'btnSim'
+    btnSim.innerText = 'Sim'
+
+    const btnNao = document.createElement('button')
+    btnNao.classList = 'btnNao'
+    btnNao.innerText = 'Não'
+
+    containerBtnsExclusao.append(btnSim, btnNao)
+
+    modalExclusaoProduto.addEventListener('click', function(event){
+      const clicouFechar = event.target.classList
+      console.log(clicouFechar)
+
+      if(clicouFechar[0] === 'btnNao' || clicouFechar[0] === 'btnFecharCadasto'){
+        secaoPrincipal.removeChild(backGroundModalExcluir)
+      }
+    })
+
+
+
+  }
+
+  static modalStatusCadastrado(){
+
+  }
 }
  
 export { Modals }
