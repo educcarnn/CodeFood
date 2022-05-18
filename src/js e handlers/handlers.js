@@ -1,8 +1,25 @@
 
+//HANDLER DA PAGINA PRINCIPAL DO USUARIO NÃO LOGADO
+
+=======
+
 import { ListarProdutos } from '../models/Api.js'
 import { Modals } from './dom.js'
 import { Produtos } from '../models/Produtos.js'
 
+
+
+const btnLogar = document.querySelector('.btnLoginHome')
+
+
+btnLogar.addEventListener('click', function(event){
+  const clicouLogin = event.target.classList
+  console.log(clicouLogin[0] === 'btnLoginHome')
+
+  if(clicouLogin[0] === 'btnLoginHome'){
+    Modals.modalLogin()
+  }
+})
 
 
 /*
@@ -13,6 +30,8 @@ const ul = document.querySelector('.lista-produtos')
 //   Modals.modalCadastroProduto()
 // })
 
+
+=======
 // btnAdicionarProduto.addEventListener('click', function(){
 //   Modals.modalCadastroProduto()
 // })
@@ -30,3 +49,6 @@ function pesquisaInstantanea(palavraPesquisada){
 
   Produtos.mostrarProdutos(produtoFiltrado)
 }
+
+
+
