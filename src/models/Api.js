@@ -134,7 +134,7 @@ class Privados{
         return await fetch(`${URL}/my/products/${id}`, {
             method: "DELETE",
             headers:  {
-                "Authorization": `Bearer ${localStorage.getItem('token')}`
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3YzRlZDc1LTRkNDQtNDM1YS1hMWQ3LTU0ZGUyMzUzZmQwOSIsImlhdCI6MTY1Mjc1OTE4NSwiZXhwIjoxNjUzNjIzMTg1LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.7zJRmCbFdIu5hbdXfz56bwqt7twLLa1R_9HJPXts74o`
             },
         })
         .then(response => console.log(response))
