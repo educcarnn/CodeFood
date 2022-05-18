@@ -129,7 +129,6 @@ class Produtos{
     static controleArray(){
         /*
         essa classe é apenas de controle para que a estilização possa ser retomarda ao normal, caso o comprimento do array seja vazio ou zero
-
         */
     }
 
@@ -141,9 +140,4 @@ class Produtos{
 const produtos = await ListarProdutos.metodoGet()
 Produtos.DataBase = produtos
 Produtos.mostrarProdutos(produtos)
-
 export { Produtos }
-
-
-
-

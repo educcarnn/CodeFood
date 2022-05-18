@@ -6,6 +6,7 @@
   <title>Kenzie Food</title>
   <link rel="stylesheet" href="/src/styles/reset.css">
   <link rel="stylesheet" href="./src/styles/home.css">
+  <link rel="stylesheet" href="/src/styles/modal.css">
   
   <link rel='preconnect' href='https://fonts.googleapis.com'>
   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
@@ -14,7 +15,10 @@
 <body>
   <header>
     <h1>Kenzie Food</h1>
+    <div class="containerLogin" >
       <input type="search" class="input-campo" placeholder="Pesquisar por produto" name="input-pesquisar">
+      <button class="btnLoginHome">Login</button>
+    </div>
   </header>
 
   <main id="secaoPrincipal">
@@ -36,14 +40,14 @@
           <p id="mensagemStatusCarrinho">Por enquanto não temos produtos no carrinho</p>
         </div>
 
-        <!-- <div id="footer-carrinho">
+        <div id="footer-carrinho">
           <div id="quantidade">
             <p>Quantidade</p>
           </div>
           <div id="total">
             <p>Total</p>
           </div>
-        </div> ESSE APARECE DINAMICAMENTE QUNADO ADICIONA PRODUTO NO CARRINHO-->
+        </div> 
 
       </aside>
     </section>
@@ -52,11 +56,13 @@
 
     </section>
 
-    <script type="module" src="/src/models/Vitrine.js"></script>
+
     <script type='module' src='/src/models/Api.js'></script>
     <script type='module' src='/src/models/Produtos.js'></script>
     <script type='module' src='/src/js e handlers/script.js'></script>
-    <script type="module" src="./src/js e handlers/handlers.js"></script>
+    <script type="module" src="/src/js e handlers/handlers.js"></script>
+
+
   </main>
 </body>
 </html>
