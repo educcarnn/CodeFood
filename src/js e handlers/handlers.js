@@ -6,4 +6,3 @@ const btnAdicionarProduto = document.getElementById('btnAdicionarProduto')
 btnAdicionarProduto.addEventListener('click', function(){
   Modals.modalCadastroProduto()
 })
-

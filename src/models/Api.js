@@ -140,10 +140,6 @@ class Privados{
         .then(response => console.log(response))
         .catch(err => console.error(err));
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 218e79fb49d6b4951ef9efb831b1974669290305
 }
 
 export {ListarProdutos}
