@@ -1,9 +1,12 @@
+
 import { Privados } from "./Api.js"
 
+
 class ProdutosCriados{
-    
-    static metodoGet(itemsPrivados) {
+
+    static async metodoGet(itemsPrivados) {
         const ul = document.querySelector('.lista-produtos')
+
         console.log(itemsPrivados)
         itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
 
@@ -30,11 +33,14 @@ class ProdutosCriados{
             divPrivado.id = 'acoes'
                 const imgDivPrivado =document.createElement('img')
                 imgDivPrivado.id = 'editar'
+            
                 //imgDivPrivado.src = 
                 const excluirDivPrivado = document.createElement('img')
                 excluirDivPrivado.id ='excluir'
-                //excluirDivPrivado.src
+                excluirDivPrivado.classList.add(id)
 
+
+              
             ul.appendChild(li)
                 li.appendChild(imagemProdutoPrivado)
                 li.appendChild(nomeProdutoPrivado)
@@ -45,9 +51,10 @@ class ProdutosCriados{
                     divPrivado.appendChild(excluirDivPrivado)
 
          })
+
+         
     }
 }
 
 const produtosPrivados = await Privados.listarProdutosGet()
 ProdutosCriados.metodoGet(produtosPrivados)
-
