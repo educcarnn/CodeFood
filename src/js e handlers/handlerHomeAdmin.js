@@ -5,11 +5,12 @@ const btnDashBoard = document.querySelector('.btnDashboard')
 const btnLogout = document.querySelector('.btnAdmin')
 
 btnDashBoard.addEventListener('click', function() {
-  window.location = `/src/pages/homeAdmin.html`
+  window.location = `/src/pages/dashboard.html`
 })
 
 btnLogout.addEventListener('click', function(){
-  console.log('clicou')
+  localStorage.removeItem('token')
+  window.location = `/index.html`
 })
 
 const inputPesquisarProduto = document.querySelector(".input-campo")

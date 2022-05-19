@@ -69,7 +69,7 @@ class Privados{
             headers: {
                 /* valor chumbado para testes*/
                 /* Situação normal é getitem do localstorage com token*/
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3YzRlZDc1LTRkNDQtNDM1YS1hMWQ3LTU0ZGUyMzUzZmQwOSIsImlhdCI6MTY1Mjc1OTE4NSwiZXhwIjoxNjUzNjIzMTg1LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.7zJRmCbFdIu5hbdXfz56bwqt7twLLa1R_9HJPXts74o`
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdhYzc1ZmUxLTM1NWEtNDU4OS1hMDZkLWQwMzlhZGE4NjhkMSIsImlhdCI6MTY1Mjk2NDA2MiwiZXhwIjoxNjUzODI4MDYyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.rYhhQYgkMSz2eQ-eki-fREWL7ez7tx2VrMoDhV6R5Kc`
             }
         })
         const data = await produtos.json()
@@ -114,7 +114,7 @@ class Privados{
         return await fetch(`${URL}/my/products/${id}`, {
             method: "DELETE",
             headers:  {
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3YzRlZDc1LTRkNDQtNDM1YS1hMWQ3LTU0ZGUyMzUzZmQwOSIsImlhdCI6MTY1Mjc1OTE4NSwiZXhwIjoxNjUzNjIzMTg1LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.7zJRmCbFdIu5hbdXfz56bwqt7twLLa1R_9HJPXts74o`
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdhYzc1ZmUxLTM1NWEtNDU4OS1hMDZkLWQwMzlhZGE4NjhkMSIsImlhdCI6MTY1Mjk2NDA2MiwiZXhwIjoxNjUzODI4MDYyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.rYhhQYgkMSz2eQ-eki-fREWL7ez7tx2VrMoDhV6R5Kc`
             },
         })
         .then(response => console.log(response))

@@ -3,14 +3,13 @@ import { Privados } from "./Api.js"
 
 
 class ProdutosCriados{
-    static dataBase = []
+    static DataBase = []
     
     static async metodoGet(itemsPrivados) {
         
 
         const ul = document.querySelector('.lista-produtos')
 
-        console.log(itemsPrivados)
         itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
 
             const li = document.createElement('li')
@@ -59,5 +58,9 @@ class ProdutosCriados{
     }
 }
 
-const produtosPrivados = await Privados.listarProdutosGet()
-ProdutosCriados.metodoGet(produtosPrivados)
+const produtosPrivadosNovos = await Privados.listarProdutosGet()
+ProdutosCriados.DataBase = produtosPrivadosNovos
+
+ProdutosCriados.metodoGet(produtosPrivadosNovos)
+console.log(ProdutosCriados.DataBase)
+export {ProdutosCriados}

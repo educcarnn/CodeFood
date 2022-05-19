@@ -1,5 +1,6 @@
+import { ProdutosCriados } from "../models/PrivadoUser.js"
+
 import { Modals } from "./dom.js"
-import { Produtos } from "../models/Produtos.js"
 
 const btnAdicionarProduto = document.getElementById('btnAdicionarProduto')
 const ul = document.querySelector('.lista-produtos')
@@ -17,6 +18,7 @@ btnAdicionarProduto.addEventListener('click', function(){
   Modals.modalCadastroProduto()
 })
 
+<<<<<<< HEAD
 const inputPesquisarProduto = document.querySelector('.input-campo')
 inputPesquisarProduto.addEventListener("keyup", function (event) {
   pesquisaInstantanea(event.target.value)
@@ -32,6 +34,25 @@ function pesquisaInstantanea(palavraPesquisada) {
   )
 
   Produtos.mostrarProdutos(produtoFiltrado)
+=======
+const inputPesquisarProduto = document.querySelector('#input-pesquisar')
+inputPesquisarProduto.addEventListener("keyup", function(event) {
+pesquisaInstantanea(event.target.value)
+ })
+
+
+function pesquisaInstantanea(palavraPesquisada) {
+  const containerProdutos = document.querySelector('.lista-produtos')
+
+ containerProdutos.innerHTML = ''
+let produtoFiltrado = ProdutosCriados.DataBase.filter(
+(produto) =>
+       produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
+    produto.categoria.toLowerCase().includes(palavraPesquisada.toLowerCase())
+  )
+
+   ProdutosCriados.metodoGet(produtoFiltrado)
+>>>>>>> e712e6750e9454fd2c7cac32f92e0e0846100f10
 }
 
 const botoesCategorias = document.querySelectorAll('li')
@@ -44,30 +65,40 @@ botoesCategorias.forEach((botao) => {
 })
 
 function filtrarPorCategoria(categoria) {
-  const produtos = Produtos.DataBase
+  const produtos = ProdutosCriados.DataBase
   let produtosFiltrados
-  const containerProdutos = document.getElementById('.lista-produtos')
+  const containerProdutos = document.querySelector('.lista-produtos')
 
-  if (categoria == 'todos') {
+  if (categoria == 'Todos') {
     containerProdutos.innerHTML = ''
-    Produtos.mostrarProdutos(produtos)
+    ProdutosCriados.metodoGet(produtos)
   }
 
-  if (categoria == 'panificadora') {
+  if (categoria == 'Panificadora') {
     produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Panificadora')
     containerProdutos.innerHTML = ''
-    Produtos.mostrarProdutos(produtosFiltrados)
+    ProdutosCriados.metodoGet(produtosFiltrados)
   }
 
-  if (categoria == 'frutas') {
+  if (categoria == 'Frutas') {
     produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Frutas')
     containerProdutos.innerHTML = ''
-    Produtos.mostrarProdutos(produtosFiltrados)
+    ProdutosCriados.metodoGet(produtosFiltrados)
   }
 
-  if (categoria == 'bebidas') {
+  if (categoria == 'Bebidas') {
     produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Bebidas')
     containerProdutos.innerHTML = ''
-    Produtos.mostrarProdutos(produtosFiltrados) 
+    ProdutosCriados.metodoGet(produtosFiltrados) 
   }
 }
+
+ul.addEventListener('click', function(event){
+  const clicouEditar = event.target.id
+  const productId = event.target.closest('li').productId
+
+  if(clicouEditar === 'editar'){
+    Modals.editarProduto(productId)
+  }
+  
+})
