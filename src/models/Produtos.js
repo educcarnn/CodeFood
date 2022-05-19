@@ -84,7 +84,7 @@ class Produtos{
                 iconeRemover.src = "/src/styles/imgs/iconeLixeira.svg"
                 iconeRemover.id = 'iconeRemover'
                 iconeRemover.addEventListener('click', (e) =>{
-                    
+                    localStorage.removeItem('carrinho')
                     e.target.parentElement.remove('')
                    this.quantidade--
                    paragrafoDeQuantidade.innerText = `Quantidade: ${this.quantidade}`
@@ -111,12 +111,9 @@ class Produtos{
                 const precoProdutoCarrinho = document.createElement('span')
                 precoProdutoCarrinho.innerText = e.target.parentElement.childNodes[4].innerText
            
-               this.valorLocal++
-               this.localProdutos.push({ 
-                   imagem: e.target.parentElement.childNodes[0].src
-               })
 
-               localStorage.setItem((`produtos${this.valorLocal}`), JSON.stringify(this.localProdutos))
+               localStorage.setItem(('carrinho'), JSON.stringify(this.localProdutos))
+             
                /*
                Api extra, todos jogados no local storage, serão chamados dentro dessa classe para serem consumidos pela api
                acredito não haver nenhuma interação visual para o usuário
@@ -154,19 +151,22 @@ class Produtos{
         })
     }
 
-    static controleArray(){
-        /*
-        essa classe é apenas de controle para que a estilização possa ser retomarda ao normal, caso o comprimento do array seja vazio ou zero
-        */
-    }
-
-
 }
-
-
 
 const produtos = await ListarProdutos.metodoGet()
 Produtos.DataBase = produtos
 Produtos.mostrarProdutos(produtos)
+
+const valor = JSON.parse(localStorage.getItem('carrinho'))
+
+console.log(valor)
+// class ProdutosLocal{
+//     static localCarrinho(){
+//         valor.forEach((elem) =>{
+         
+//         })
+//     }
+// }
+// ProdutosLocal.localCarrinho()
 
 export { Produtos }
