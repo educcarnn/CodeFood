@@ -52,16 +52,20 @@ li {
     margin-right: 50px;
   }
 
+  .input-campo:hover{
+    border: 1px solid #212529;
+  }
+
+
 .btnLoginHome, .btnAdmin{
   font-family: 'Poppins';
-  font-weight: 700;
   font-size: 16px;
   width: 20vh;
   height: 7vh;
-  border-radius: 3vh;
-  border: none;
-  background-color: #F8F9FA;
-  color: black;
+  border-radius: 4.289544235924933vh;
+  border: 1.5px solid #FF2253 ;
+  background: #FFF7F4;
+  color: #FF2253;
   cursor: pointer;
   margin-right: 50px;
 }
@@ -69,7 +73,6 @@ li {
 .btnLoginHome:hover, .btnAdmin{
   width: 20vh;
   height: 7vh;
-  border-radius: 3vh;
   border: none;
   background-color: #FF2253;
   color: white;
@@ -99,6 +102,8 @@ li {
     border-radius: 32px;
     color: #212529;
     cursor: pointer;
+    gap: 10px;
+    border: 1.5px solid #FF2253;
   }
   
   section.container-carrinho{
@@ -194,17 +199,16 @@ li {
     flex-direction: row;
     width: 80vw;
     height: 100%;
-    padding-top: 50px;
   }
   
   ul{
     display: flex;
     justify-content: center;
-    margin-left: 115px;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: -325px;
-    margin-left: -8px;
+    margin-top: -43.5656836461126vh;
+    margin-left: -2.385417vw;
+    width: 80.59375vw;
   }
   
   li{
@@ -225,6 +229,10 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+
+  section > ul > li > img:hover{
+    border: 3px solid #FF2253;
   }
   
   section > ul > li > h2{
@@ -288,6 +296,12 @@ li {
   margin-left: 244px;
   border: none;
 }
+
+#botaoAdd:hover{
+  background: #0CA678;
+  border-radius: 10px;
+}
+
 #produtosFilhos{
   margin-right: -103px;
 }
