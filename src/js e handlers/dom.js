@@ -1,4 +1,5 @@
 import { Privados } from "../models/Api.js"
+import { ProdutosCriados } from "../models/PrivadoUser.js"
 
 const secaoPrincipal = document.getElementById('secaoPrincipal')
 
@@ -50,6 +51,7 @@ class Modals{
     inputNome.ariaRequired = 'true'
 
     containerCategoria.append(categoriaProduto, inputNome)
+
 
     const containerCategoria2 = document.createElement('div')
     containerCategoria2.classList = 'containerCategoria'
@@ -106,6 +108,24 @@ class Modals{
 
     categoriaBtn.append(btnPanificadora, btnFrutas, btnBebidas)
 
+    const containerCategoriaPreco = document.createElement('div')
+    containerCategoriaPreco.classList = 'containerCategoria'
+
+    formularioCadastroProduto.appendChild(containerCategoriaPreco)
+
+    const categoriaPreco = document.createElement('label')
+    categoriaPreco.classList = 'categoriaTitulo'
+    categoriaPreco.innerText = 'Valor do Produto'
+
+    const inputPreco = document.createElement('input')
+    inputPreco.type = 'number'
+    inputPreco.name = 'preco'
+    inputPreco.placeholder = '50,00'
+    inputPreco.classList = 'categoria'
+    inputPreco.ariaRequired = 'true'
+
+    containerCategoriaPreco.append(categoriaPreco, inputPreco)
+
     const containerCategoria4 = document.createElement('div')
     containerCategoria4.classList = 'containerCategoria'
 
@@ -149,7 +169,9 @@ class Modals{
 
       for(let i = 0; i < formularioCadastroProduto.length - 1; i++){
         const { name, value } = formularioCadastroProduto[i]
-       
+  
+          data[name] = value
+
         if(name === 'categoria'){
           data[name] = categoria
         } 
@@ -158,7 +180,7 @@ class Modals{
         }
        
       }
-      //await Privados.criarProdutosPost(data)
+      await Privados.criarProdutosPost(data)
       console.log(data)
     })
 
@@ -396,7 +418,18 @@ class Modals{
      })
   }
 
-  static editarProduto(productId){
+  static async editarProduto(productId){
+
+    let data = {}
+
+    let produto = ProdutosCriados.DataBase.find((produto) => {
+      return produto.id == productId
+    })
+    console.log(produto)
+    
+      const { nome, preco, descricao, categoria, imagem} = produto
+     
+
     const backGroundModal = document.createElement('div')
     backGroundModal.classList = 'backGroundModal'
     
@@ -435,6 +468,7 @@ class Modals{
     inputNome.classList = 'categoria'
     inputNome.type = 'text'
     inputNome.name = 'nome'
+    inputNome.value = nome
     inputNome.placeholder = 'Digite o nome'
     inputNome.ariaRequired = 'true'
 
@@ -452,6 +486,7 @@ class Modals{
     const inputDescricao = document.createElement('input')
     inputDescricao.type = 'text'
     inputDescricao.name = 'descricao'
+    inputDescricao.value = descricao
     inputDescricao.placeholder = 'Digite a descrição'
     inputDescricao.classList = 'categoria descricao'
     inputDescricao.ariaRequired = 'true'
@@ -476,6 +511,7 @@ class Modals{
     btnPanificadora.type = 'button'
     btnPanificadora.id = 'panificadora'
     btnPanificadora.name = 'categoria'
+    btnPanificadora.value = categoria
     btnPanificadora.classList = 'btnCategoria'
     btnPanificadora.value = 'panificadora'
     btnPanificadora.innerText = 'Panificadora'
@@ -484,6 +520,7 @@ class Modals{
     btnFrutas.type = 'button'
     btnFrutas.id = 'frutas'
     btnFrutas.name = 'categoria'
+    btnPanificadora.value = categoria
     btnFrutas.classList = 'btnCategoria'
     btnFrutas.value = 'frutas'
     btnFrutas.innerText = 'Frutas'
@@ -491,12 +528,32 @@ class Modals{
     const btnBebidas = document.createElement('button')
     btnBebidas.type = 'button'
     btnBebidas.id = 'bebidas'
+    btnPanificadora.value = categoria
     btnBebidas.name = 'categoria'
     btnBebidas.classList = 'btnCategoria'
     btnBebidas.value = 'bebidas'
     btnBebidas.innerText = 'Bebidas'
 
     categoriaBtn.append(btnPanificadora, btnFrutas, btnBebidas)
+
+    const containerCategoriaPreco = document.createElement('div')
+    containerCategoriaPreco.classList = 'containerCategoria'
+
+    formularioCadastroProduto.appendChild(containerCategoriaPreco)
+
+    const categoriaPreco = document.createElement('label')
+    categoriaPreco.classList = 'categoriaTitulo'
+    categoriaPreco.innerText = 'Valor do Produto'
+
+    const inputPreco = document.createElement('input')
+    inputPreco.type = 'number'
+    inputPreco.name = 'preco'
+    inputPreco.value = preco
+    inputPreco.placeholder = '50,00'
+    inputPreco.classList = 'categoria'
+    inputPreco.ariaRequired = 'true'
+
+    containerCategoriaPreco.append(categoriaPreco, inputPreco)
 
     const containerCategoria4 = document.createElement('div')
     containerCategoria4.classList = 'containerCategoria'
@@ -512,6 +569,7 @@ class Modals{
     inputImg.name = 'imagem'
     inputImg.placeholder = 'Insira seu link'
     inputImg.classList = 'categoria'
+    inputImg.value = imagem
     inputImg.ariaRequired = 'true'
 
     containerCategoria4.append(categoriaImg, inputImg)
@@ -552,17 +610,45 @@ class Modals{
       }
     })
 
+    let categoriaValue = ''
+
     btnSalvar.addEventListener('click', function(event){
       event.preventDefault()
 
-      let data = {}
-      
-      for(let i = 0; i < formularioCadastroProduto.length; i++){
+      const clicouCategoria = event.target.classList
+
+      for(let i = 0; i < formularioCadastroProduto.length - 2; i++){
         const { name, value } = formularioCadastroProduto[i]
+  
+          data[name] = value
 
-        data[name] = value
+        if(name === 'categoria'){
+          data[name] = categoriaValue
+        } 
+        else {
+          data[name] = value
+        }
+       
+      }
+      Privados.editarProdutosPost(data, productId)
+    })
 
-        console.log(data)
+    const btnProdutos = document.querySelector('.categoriaBtn')
+
+    btnProdutos.addEventListener('click', function(event){
+      const clicouCategoria = event.target.id
+      console.log(clicouCategoria)
+
+      if(clicouCategoria === 'frutas'){
+        categoriaValue = clicouCategoria
+      }
+
+      if(clicouCategoria === 'panificadora'){
+        categoriaValue = clicouCategoria
+      }
+
+      if(clicouCategoria === 'bebidas'){
+        categoriaValue = clicouCategoria
       }
     })
   }

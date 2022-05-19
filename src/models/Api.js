@@ -92,13 +92,13 @@ class Privados{
             if(response.status !== "Error") {
                 const statusCadastro = Modals.modalStatusCadastrado()
                 setTimeout(() => {
-                statusCadastro.remove()
+                    //statusCadastro.removed()
                 }, 3000);
             }
             else {
                 const statusNaoCadastro = Modals.modalStatusNaoCadastrado()
                 setTimeout(() => {
-                    statusNaoCadastro.remove()
+                //statusNaoCadastro.remove()
                 }, 3000);
             }
         })

@@ -78,9 +78,9 @@ function filtrarPorCategoria(categoria) {
 ul.addEventListener('click', function(event){
   const clicouEditar = event.target.id
   const productId = event.target.closest('li').productId
-
+  
   if(clicouEditar === 'editar'){
     Modals.editarProduto(productId)
   }
-  
+
 })
