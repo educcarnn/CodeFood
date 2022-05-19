@@ -360,3 +360,19 @@ li {
   color: #FF2253;
   background-color: white;
 }
+#erroCadastro {
+  width: 150px;
+  height: 50px;
+  color: white;
+}
+#restricaoTipo {
+  width: 50px;
+  height: 50px;
+  color: white;
+  background-color: black;
+}
+#statusSenha {
+  width: 50px;
+  height: 50px;
+  color: white;
+}
