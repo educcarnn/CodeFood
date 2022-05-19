@@ -30,7 +30,11 @@ function pesquisaInstantanea(palavraPesquisada) {
  containerProdutos.innerHTML = ''
 let produtoFiltrado = ProdutosCriados.DataBase.filter(
 (produto) =>
+<<<<<<< HEAD
     produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
+=======
+       produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
+>>>>>>> 724ba45cd7b64f988483f5743dac1a87aacbe39a
     produto.categoria.toLowerCase().includes(palavraPesquisada.toLowerCase())
   )
 
@@ -82,5 +86,5 @@ ul.addEventListener('click', function(event){
   if(clicouEditar === 'editar'){
     Modals.editarProduto(productId)
   }
-
+  
 })
