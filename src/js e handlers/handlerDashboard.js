@@ -18,10 +18,12 @@ btnAdicionarProduto.addEventListener('click', function(){
   Modals.modalCadastroProduto()
 })
 
+
 const inputPesquisarProduto = document.querySelector('.input-campo')
 inputPesquisarProduto.addEventListener("keyup", function (event) {
   pesquisaInstantanea(event.target.value)
 })
+
 
 function pesquisaInstantanea(palavraPesquisada) {
   const containerProdutos = document.querySelector('.container-cards')
@@ -33,7 +35,26 @@ function pesquisaInstantanea(palavraPesquisada) {
   )
 
   Produtos.mostrarProdutos(produtoFiltrado)
-}
+
+const inputPesquisarProduto = document.querySelector('#input-pesquisar')
+inputPesquisarProduto.addEventListener("keyup", function(event) {
+pesquisaInstantanea(event.target.value)
+ })
+
+
+function pesquisaInstantanea(palavraPesquisada) {
+  const containerProdutos = document.querySelector('.container-cards')
+  containerProdutos.innerHTML = ''
+  let produtoFiltrado = Produtos.DataBase.filter(
+    (produto) =>
+      produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
+      produto.categoria.toLowerCase().includes(palavraPesquisada.toLowerCase())
+  )
+
+
+   ProdutosCriados.metodoGet(produtoFiltrado)
+
+
 
 const botoesCategorias = document.querySelectorAll('li')
 
@@ -76,9 +97,9 @@ function filtrarPorCategoria(categoria) {
 ul.addEventListener('click', function(event){
   const clicouEditar = event.target.id
   const productId = event.target.closest('li').productId
-
+  
   if(clicouEditar === 'editar'){
     Modals.editarProduto(productId)
   }
-  
+
 })
