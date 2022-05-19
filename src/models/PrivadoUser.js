@@ -3,8 +3,11 @@ import { Privados } from "./Api.js"
 
 
 class ProdutosCriados{
-
+    static dataBase = []
+    
     static async metodoGet(itemsPrivados) {
+        
+
         const ul = document.querySelector('.lista-produtos')
 
         console.log(itemsPrivados)
