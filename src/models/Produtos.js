@@ -3,6 +3,13 @@ import { ListarProdutos } from '../models/Api.js';
 const section = document.querySelector('.container-cards')
 const statusCarrinhoVazio = document.querySelector('#mensagemStatusCarrinho')
 const criarUL = document.createElement('ul')
+const ulCarrinho = document.querySelector('#ulCarrinho')
+
+    const quantidade = document.querySelector('#quantidade')
+    const total = document.querySelector('#total')
+
+    const paragrafoDeQuantidade = document.createElement('p')
+    const precoDeQuantidade = document.createElement('p')
 
 class Produtos{
     static preco = 0
@@ -14,10 +21,13 @@ class Produtos{
     static localProdutos = []
     
     static mostrarProdutos(items) {
+
         const ul = document.createElement('ul')
         ul.id = 'lista-de-cards'
         items.forEach(({id, imagem, nome, descricao, categoria, preco}) => {
-           
+            /*
+            Calculo de quantidade e preco
+            */
             const li = document.createElement('li')
             li.classList.add('card-produto')
 
@@ -36,22 +46,25 @@ class Produtos{
             categoriaProdutos.id = 'categoria'
 
             const precoProdutos = document.createElement('span')
-            precoProdutos.innerText = `R$ ${preco},00`
+            precoProdutos.innerText = `R$ ${preco}`
             precoProdutos.id = 'preco'
 
             const imgAddCard = document.createElement('img')
             imgAddCard.src = "/src/styles/imgs/btnAddCard.svg"
             imgAddCard.id = "botaoAdd"
 
-
             imgAddCard.addEventListener('click', (e) =>{
                this.quantidade++
+               paragrafoDeQuantidade.innerText = `Quantidade: ${this.quantidade}`
+
+               const calculoPreco = e.target.parentElement.childNodes[4].textContent.split(' ')
+               this.preco += Number(calculoPreco[1]) 
+         
+               precoDeQuantidade.innerText = `Preço: R$ ${this.preco}`
+
                const carrinho = document.querySelector('#corpo-carrinho')
-     
                criarUL.id = 'ulCarrinho'
-
                statusCarrinhoVazio.innerText = ''
-
                 const criarLi = document.createElement('li')
                 criarLi.id = 'liCarrinho'
 
@@ -68,9 +81,27 @@ class Produtos{
                 nomeProdutoCarrinho.id = 'nomeProdutoCarrinho'   
 
                 const iconeRemover = document.createElement('img')
-                //iconeRemover.src = 
-                
+                iconeRemover.src = "/src/styles/imgs/iconeLixeira.svg"
+                iconeRemover.id = 'iconeRemover'
                 iconeRemover.addEventListener('click', (e) =>{
+                    
+                    e.target.parentElement.remove('')
+                   this.quantidade--
+                   paragrafoDeQuantidade.innerText = `Quantidade: ${this.quantidade}`
+                    
+
+                   const calculoPreco = e.target.parentElement.childNodes[4].textContent.split(' ')
+                   this.preco -= Number(calculoPreco[1]) 
+                   precoDeQuantidade.innerText = `Preço: R$ ${this.preco}`
+    
+                   if(this.quantidade === 0) {
+                    const ul = document.querySelector('#ulCarrinho')
+                    paragrafoDeQuantidade.innerHTML = ''
+                    precoDeQuantidade.innerHTML = ''
+                    statusCarrinhoVazio.innerText = 'Seu carrinho está vazio, volte a adicionar produtos no carrinho'
+                    ul.remove('')
+                }
+
 
                 })
                 const categoriaProdutoCarrinho = document.createElement('span')
@@ -79,12 +110,12 @@ class Produtos{
                 
                 const precoProdutoCarrinho = document.createElement('span')
                 precoProdutoCarrinho.innerText = e.target.parentElement.childNodes[4].innerText
-
            
                this.valorLocal++
                this.localProdutos.push({ 
                    imagem: e.target.parentElement.childNodes[0].src
                })
+
                localStorage.setItem((`produtos${this.valorLocal}`), JSON.stringify(this.localProdutos))
                /*
                Api extra, todos jogados no local storage, serão chamados dentro dessa classe para serem consumidos pela api
@@ -92,25 +123,25 @@ class Produtos{
                */
                         carrinho.appendChild(criarUL)
                                 criarUL.appendChild(criarLi)
-                                    criarLi.appendChild(imgProdutoCarrinho)
                                     criarLi.appendChild(divInfosCarrinho)
-                                            divInfosCarrinho.appendChild(nomeProdutoCarrinho)
-                                            divInfosCarrinho.appendChild(categoriaProdutoCarrinho)
-                                            divInfosCarrinho.appendChild(precoProdutoCarrinho)
-                                    
+
+                                            criarLi.appendChild(imgProdutoCarrinho)
+                                            criarLi.appendChild(nomeProdutoCarrinho)
+                                            criarLi.appendChild(categoriaProdutoCarrinho)
+                                            criarLi.appendChild(precoProdutoCarrinho)
+                                            criarLi.appendChild(iconeRemover)
+                                    quantidade.appendChild(paragrafoDeQuantidade)
+                                    total.appendChild(precoDeQuantidade)
             })
-
-                this.DataBase.push({
-                    id: id,
-                    imagem: imagem,
-                    nome: nome, 
-                    descricao: descricao,
-                    categoria: categoria,
-                    preco: preco,
-                })
+                // this.DataBase.push({
+                //     id: id,
+                //     imagem: imagem,
+                //     nome: nome, 
+                //     descricao: descricao,
+                //     categoria: categoria,
+                //     preco: preco,
+                // })
                 
-      
-
             section.appendChild(ul)
                 ul.appendChild(li)
                     li.appendChild(imagemProduto)
@@ -126,7 +157,6 @@ class Produtos{
     static controleArray(){
         /*
         essa classe é apenas de controle para que a estilização possa ser retomarda ao normal, caso o comprimento do array seja vazio ou zero
-
         */
     }
 
@@ -136,10 +166,8 @@ class Produtos{
 
 
 const produtos = await ListarProdutos.metodoGet()
+Produtos.DataBase = produtos
 Produtos.mostrarProdutos(produtos)
 
 
-
-
-
-
+export { Produtos }

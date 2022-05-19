@@ -10,6 +10,10 @@ header{
   justify-content: space-between;
 }
 
+.header{
+  display: flex;
+}
+
 .tituloSite{
   font-family: 'Poppins';
   font-style: normal;
@@ -28,7 +32,10 @@ header{
   margin-right: 15vh;
 }
 
+
 .login, .homePage{
+  font-size: 16px;
+  font-weight: 700;
   width: 15vh;
   height: 5vh;
   border-radius: 3vh;

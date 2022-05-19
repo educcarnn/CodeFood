@@ -44,42 +44,21 @@ class Login {
     static BASE_URL = "https://api-kenzie-food.herokuapp.com"
     
     static async metodoPost(dadosLogin) {
-        await fetch(`${this.BASE_URL}/auth/login`, {
+        const login = await fetch(`${this.BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(dadosLogin)
         })
-        .then(response => response.json())
-        .then((response) => {
-            if(response.error === "password invalid") {
-                const body = document.querySelector('body')
-    
-               const div = document.createElement('div')
-               div.id = 'erroCadastro'
-               div.innerText = 'Problema na sua senha, verifique-a'
-               body.appendChild(div)
-    
-               setTimeout(() => {
-                    div.remove()
-               }, 1500);
-            }
-            else {
-                localStorage.setItem('token', response)
-                window.location = `/src/pages/homeAdmin.html`
-            }
-            })
-      
-        .catch((err) => {
-            console.error(err);
-        })
-            
+        const data     =  await login.json()
+        return data  
     }  
 }
 
 /// Rotas Privadas
 class Privados{
+    
     static async listarProdutosGet(){
         const URL = "https://api-kenzie-food.herokuapp.com"
  
@@ -133,13 +112,12 @@ class Privados{
         return await fetch(`${URL}/my/products/${id}`, {
             method: "DELETE",
             headers:  {
-                "Authorization": `Bearer ${localStorage.getItem('token')}`
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM3YzRlZDc1LTRkNDQtNDM1YS1hMWQ3LTU0ZGUyMzUzZmQwOSIsImlhdCI6MTY1Mjc1OTE4NSwiZXhwIjoxNjUzNjIzMTg1LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.7zJRmCbFdIu5hbdXfz56bwqt7twLLa1R_9HJPXts74o`
             },
         })
         .then(response => console.log(response))
         .catch(err => console.error(err));
     }
-
 }
 
 export {ListarProdutos}
