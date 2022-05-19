@@ -6,6 +6,8 @@ class Modals{
 
   static modalCadastroProduto(){
 
+    let data = {}
+
     const backGroundModal = document.createElement('div')
     backGroundModal.classList = 'backGroundModal'
     
@@ -56,7 +58,7 @@ class Modals{
 
     const categoriaDescricao = document.createElement('label')
     categoriaDescricao.classList = 'categoriaTitulo'
-    categoriaDescricao.innerText = 'Categorias'
+    categoriaDescricao.innerText = 'Descrição'
 
     const inputDescricao = document.createElement('input')
     inputDescricao.type = 'text'
@@ -86,7 +88,6 @@ class Modals{
     btnPanificadora.id = 'panificadora'
     btnPanificadora.name = 'categoria'
     btnPanificadora.classList = 'btnCategoria'
-    btnPanificadora.value = 'panificadora'
     btnPanificadora.innerText = 'Panificadora'
 
     const btnFrutas = document.createElement('button')
@@ -94,7 +95,6 @@ class Modals{
     btnFrutas.id = 'frutas'
     btnFrutas.name = 'categoria'
     btnFrutas.classList = 'btnCategoria'
-    btnFrutas.value = 'frutas'
     btnFrutas.innerText = 'Frutas'
 
     const btnBebidas = document.createElement('button')
@@ -102,7 +102,6 @@ class Modals{
     btnBebidas.id = 'bebidas'
     btnBebidas.name = 'categoria'
     btnBebidas.classList = 'btnCategoria'
-    btnBebidas.value = 'bebidas'
     btnBebidas.innerText = 'Bebidas'
 
     categoriaBtn.append(btnPanificadora, btnFrutas, btnBebidas)
@@ -140,6 +139,46 @@ class Modals{
       if(clicouFechar[0] === 'btnFecharCadasto'){
         secaoPrincipal.removeChild(backGroundModal)
       }
+    })
+
+    let categoria = ''
+
+    btnCadastrar.addEventListener('click', function(event){
+      event.preventDefault()
+      const clicouCategoria = event.target.classList
+
+      for(let i = 0; i < formularioCadastroProduto.length - 1; i++){
+        const { name, value } = formularioCadastroProduto[i]
+       
+        if(name === 'categoria'){
+          data[name] = categoria
+        } 
+        else {
+          data[name] = value
+        }
+       
+      }
+      
+    })
+
+    const btnProdutos = document.querySelector('.categoriaBtn')
+
+    btnProdutos.addEventListener('click', function(event){
+      const clicouCategoria = event.target.id
+      console.log(clicouCategoria)
+
+      if(clicouCategoria === 'frutas'){
+        categoria = clicouCategoria
+      }
+
+      if(clicouCategoria === 'panificadora'){
+        categoria = clicouCategoria
+      }
+
+      if(clicouCategoria === 'bebidas'){
+        categoria = clicouCategoria
+      }
+      
     })
 
   }
@@ -354,7 +393,7 @@ class Modals{
      })
   }
 
-  static editarProduto(){
+  static editarProduto(productId){
     const backGroundModal = document.createElement('div')
     backGroundModal.classList = 'backGroundModal'
     
@@ -492,6 +531,37 @@ class Modals{
     containerBtnSubmit.append(btnExcluir, btnSalvar)
 
     secaoPrincipal.appendChild(backGroundModal)
+
+    btnFecharCadasto.addEventListener('click', function(){
+      secaoPrincipal.removeChild(backGroundModal)
+
+    })
+
+    btnExcluir.addEventListener('click', function(event){
+      event.preventDefault()
+      const clicouExcluir = event.target.classList
+    
+      if(clicouExcluir[0] === 'btnExcluir'){
+        Privados.deletarProdutos(productId)
+        setTimeout(() => {
+          location.reload()
+        }, 1000);
+      }
+    })
+
+    btnSalvar.addEventListener('click', function(event){
+      event.preventDefault()
+
+      let data = {}
+      
+      for(let i = 0; i < formularioCadastroProduto.length; i++){
+        const { name, value } = formularioCadastroProduto[i]
+
+        data[name] = value
+
+        console.log(data)
+      }
+    })
   }
 }
 
