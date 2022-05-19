@@ -35,10 +35,12 @@ class ProdutosCriados{
             const divPrivado = document.createElement('div')
             divPrivado.id = 'acoes'
                 const imgDivPrivado =document.createElement('img')
+                imgDivPrivado.src = 'src/styles/imgs/icone-editar-dashboard.png'
                 imgDivPrivado.id = 'editar'
             
                 //imgDivPrivado.src = 
                 const excluirDivPrivado = document.createElement('img')
+                excluirDivPrivado.src = 'src/styles/imgs/icone-excluir-dashboard.png'
                 excluirDivPrivado.id ='excluir'
                 excluirDivPrivado.classList.add(id)
               

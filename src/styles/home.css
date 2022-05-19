@@ -2,10 +2,10 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-li {
+/* li {
   list-style: none;
   margin-left: 30px;
-}
+} */
 
 
 
@@ -106,13 +106,13 @@ li {
     border: 1.5px solid #FF2253;
   }
   
-  section.container-carrinho{
+  /* section.container-carrinho{
     float: right;
     margin-right: 114px;
     padding-top: 20px;
-  }
+  } */
   
-  section > aside > div#header-carrinho{
+  aside > div#header-carrinho{
     background: #FF2253;
     border-radius: 8px 8px 0px 0px;
     width: 320px;
@@ -124,7 +124,7 @@ li {
     margin-left: -1px;
   }
   
-  section > aside > div > h3{
+  aside > div > h3{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -134,7 +134,7 @@ li {
     text-align: center;
   }
   
-  section > aside > div#corpo-carrinho{
+  aside > div#corpo-carrinho{
     width: 319px;
     height: 296px;
     background: #F8F9FA;
@@ -145,7 +145,7 @@ li {
     align-items: center;
   }
   
-  section > aside > div > p{
+  aside > div > p{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -155,7 +155,7 @@ li {
     color: #868E96;
   }
   
-  section > aside > div#footer-carrinho{
+  aside > div#footer-carrinho{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -194,25 +194,24 @@ li {
     padding-left: 18px;
   }
   
-  .container-cards{
+  /* .container-cards{
     display: flex;
     flex-direction: row;
     width: 80vw;
     height: 100%;
-  }
+  } */
   
-  ul{
- 
+  #lista-de-cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: -43.5656836461126vh;
-    margin-left: -2.385417vw;
-    width: 80.59375vw;
-  }
+    padding-top: 5vh;
+    margin-left: 5.614583vw;
+    width: 65.59375vw;
+}
   
-  li{
+  .card-produto{
     width: 303px;
     height: 397px;
     display: grid;
@@ -303,8 +302,12 @@ li {
   border-radius: 10px;
 }
 
-#produtosFilhos{
-  margin-right: -103px;
+#produtosFilhos {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15.404826vh;
+  margin-right: 5.404826vh;
 }
 
 /*Produtos carrinho*/
@@ -319,10 +322,10 @@ li {
   width: 70px;
   height: 70px;
 }
-#liCarrinho {
+/* #liCarrinho {
   display: flex;
   height: 110px;
-  /* margin: 1px; */
+  margin: 1px;
   margin-left: 65px;
   width: 163px;
   word-break: normal;
@@ -330,7 +333,7 @@ li {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
-}
+} */
 #divInfoCarrinho {
     margin: 20px;
     display: flex;
