@@ -51,7 +51,9 @@ class Login {
             },
             body: JSON.stringify(dadosLogin)
         })
+       
         const data     =  await login.json()
+        console.log(data)
         return data  
     }  
 }
