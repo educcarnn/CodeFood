@@ -1,26 +1,21 @@
 /* Públicas*/
-import { Login } from "../models/Api"
-
+import { Login } from "../models/Api.js"
 
 //Login
 const button = document.querySelector('.btnLoginModal')
-const form = document.querySelector('.formularioLogin')
 
-class Input1 {
-    static default(e){
-        e.preventDefault()
-        
-    }
-    static Login(){
+
+class Validacao{
+
+    static async Login(){
         const valores = [...form]
-        console.log(valores)
-
+        
         const obj = {
             email: valores[0].value,
             password: valores[1].value
         }
         
-        Login.metodoPost(obj)
+        await Login.metodoPost(obj)
 // ou
         const status = await Login.metodoPost(obj) 
         if(status.error === "password invalid" || status.error === `Email: ${valores[0].value} does not exists`) {
@@ -47,8 +42,8 @@ class Input1 {
 class Input2{
 
 }
-button.addEventListener('click', Input1.default)
-button.addEventListener('click', Input1.Login)
+
+export { Validacao }
 
 //o login precisa ser trabalhado com await, caso ele precise ser rediredicionado para locais diferentes 
 

@@ -1,4 +1,2 @@
-import { Modals } from './dom.js'
-
-
+import { Modals } from "./dom.js"
 
