@@ -74,3 +74,12 @@ function filtrarPorCategoria(categoria) {
     ProdutosCriados.metodoGet(produtosFiltrados) 
   }
 }
+
+ul.addEventListener('click', function(event){
+  const clicouEditar = event.target.id
+  const productId = event.target.closest('li').productId
+
+  if(clicouEditar === 'editar'){
+    Modals.editarProduto(productId)
+  }
+})

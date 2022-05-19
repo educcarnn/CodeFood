@@ -354,7 +354,7 @@ class Modals{
      })
   }
 
-  static editarProduto(){
+  static editarProduto(productId){
     const backGroundModal = document.createElement('div')
     backGroundModal.classList = 'backGroundModal'
     
@@ -492,6 +492,23 @@ class Modals{
     containerBtnSubmit.append(btnExcluir, btnSalvar)
 
     secaoPrincipal.appendChild(backGroundModal)
+
+    btnFecharCadasto.addEventListener('click', function(){
+      secaoPrincipal.removeChild(backGroundModal)
+
+    })
+
+    btnExcluir.addEventListener('click', function(event){
+      event.preventDefault()
+      const clicouExcluir = event.target.classList
+    
+      if(clicouExcluir[0] === 'btnExcluir'){
+        Privados.deletarProdutos(productId)
+        setTimeout(() => {
+          location.reload()
+        }, 1000);
+      }
+    })
   }
 }
 
