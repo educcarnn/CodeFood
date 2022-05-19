@@ -15,28 +15,17 @@ class Cadastro{
     static BASE_URL ='https://api-kenzie-food.herokuapp.com'
 
     static async metodoPost(dadosCadastro){
-        await fetch(`${this.BASE_URL}/auth/register`, {
+          const cadastro = await fetch(`${this.BASE_URL}/auth/register`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(dadosCadastro)
         })
-        .then(response => response.json())
-        .then((response) => {
-        console.log(response)
-        /*
-        Armazenar com local storage a resposta, para na hora do cadastro da um getLocalStorage
-
-        Baseado nessa mensagem, a gente pode redirecionanar a pessoa com windows location com set timeout, caso o cadas
-        apareca uma mensagem de erro, mostrar
-        a resposta do cadastro é um objeto, do login é um token
-        */
-                
-        })
-        .catch((err) => {
-        console.error(err);
-    })
+        
+        const data = await cadastro.json()
+        return data
+    
     }
 }
 

@@ -316,14 +316,14 @@ class Modals{
 
     containerBtnsExclusao.append(btnSim, btnNao)
 
-    modalExclusaoProduto.addEventListener('click', function(event){
+    modalExclusaoProduto.addEventListener('click', async function(event){
       const clicouFechar = event.target.classList
     
       if(clicouFechar[0] === 'btnNao' || clicouFechar[0] === 'btnFecharCadasto'){
         secaoPrincipal.removeChild(backGroundModalExcluir)
       } 
       else if(clicouFechar[0] === 'btnSim'){
-        Privados.deletarProdutos(productId)
+        await Privados.deletarProdutos(productId)
         setTimeout(() => {
           location.reload()
         }, 1000);
@@ -598,12 +598,12 @@ class Modals{
 
     })
 
-    btnExcluir.addEventListener('click', function(event){
+    btnExcluir.addEventListener('click', async function(event){
       event.preventDefault()
       const clicouExcluir = event.target.classList
     
       if(clicouExcluir[0] === 'btnExcluir'){
-        Privados.deletarProdutos(productId)
+       await Privados.deletarProdutos(productId)
         setTimeout(() => {
           location.reload()
         }, 1000);
@@ -612,7 +612,7 @@ class Modals{
 
     let categoriaValue = ''
 
-    btnSalvar.addEventListener('click', function(event){
+    btnSalvar.addEventListener('click', async function(event){
       event.preventDefault()
 
       const clicouCategoria = event.target.classList
@@ -630,7 +630,7 @@ class Modals{
         }
        
       }
-      Privados.editarProdutosPost(data, productId)
+      await Privados.editarProdutosPost(data, productId)
     })
 
     const btnProdutos = document.querySelector('.categoriaBtn')

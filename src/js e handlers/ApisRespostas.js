@@ -1,9 +1,9 @@
 /* Públicas*/
-import { Login } from "../models/Api.js"
+import { Cadastro, Login } from "../models/Api.js"
 
 //Login
 const button = document.querySelector('.btnLoginModal')
-
+const body = document.querySelector('body')
 
 class Validacao{
 
@@ -35,13 +35,69 @@ class Validacao{
                 localStorage.setItem('token', status)
                 window.location = `/testes.html`
             }
-
-    }
+            Cadastro.metodoPost(obj)
+        }
+    static async metodoCadastrar(){
+                const valoresCadastro = [...formCadastro]
+                if(valoresCadastro[0].value === '' || valoresCadastro[1].value === '' || valoresCadastro[2].value === '' || valoresCadastro[3] === '') {
+                    const mensagemErro = document.createElement('p')
+                    mensagemErro.innerText = 'Preencha todos os dados para prosseguir'
+                    mensagemErro.id = 'restricaoTipo'
+                    body.appendChild(mensagemErro)
+        
+                    setTimeout(() => {
+                        mensagemErro.remove()
+                    }, 1500);
+                }
+        
+                else if(valoresCadastro[2].value !== valoresCadastro[3].value) {
+        
+                    alert('senhas diferentes')
+                    const statusSenha = document.createElement('p')
+                    statusSenha.innerText = 'Digite a mesma senha para ambos campos'
+                    statusSenha.id = 'statusSenha'
+                    body.appendChild(statusSenha)
+        
+                    setTimeout(() => {
+                        statusSenha.remove()
+                    }, 1500);
+                }
+                else {
+                    let obj = {
+                        name: valoresCadastro[0].value,
+                        email: valoresCadastro[1].value,
+                        password: valoresCadastro[2].value
+                    }
+        
+                    const resposta = await Cadastro.metodoPost(obj)
+                    console.log(resposta)
+                    if(resposta === "User Already Exists!") {
+                        alert('usuário já cadastrado')
+                        const erroCadastro = document.createElement('p')
+                        erroCadastro.innerText = 'E-mail de usuário existente, tente outro'
+                        erroCadastro.id = 'erroCadastro'
+                        body.appendChild(erroCadastro)
+        
+                        setTimeout(() => {
+                            erroCadastro.remove()
+                        }, 1500)
+                    }
+                    else {
+                      
+                
+                        setTimeout(() => {
+                            window.location = `/src/pages/homeAdmin.html`
+                        }, 1500);
+                        
+                    }
+                }
+    
+            }
+            
 }
+        
 
-class Input2{
 
-}
 
 export { Validacao }
 
