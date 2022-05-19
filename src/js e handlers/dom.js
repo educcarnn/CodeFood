@@ -513,7 +513,7 @@ class Modals{
     btnPanificadora.name = 'categoria'
     btnPanificadora.value = categoria
     btnPanificadora.classList = 'btnCategoria'
-    btnPanificadora.value = 'panificadora'
+    btnPanificadora.value = 'Panificadora'
     btnPanificadora.innerText = 'Panificadora'
 
     const btnFrutas = document.createElement('button')
@@ -522,7 +522,7 @@ class Modals{
     btnFrutas.name = 'categoria'
     btnPanificadora.value = categoria
     btnFrutas.classList = 'btnCategoria'
-    btnFrutas.value = 'frutas'
+    btnFrutas.value = 'Frutas'
     btnFrutas.innerText = 'Frutas'
 
     const btnBebidas = document.createElement('button')
@@ -531,7 +531,7 @@ class Modals{
     btnPanificadora.value = categoria
     btnBebidas.name = 'categoria'
     btnBebidas.classList = 'btnCategoria'
-    btnBebidas.value = 'bebidas'
+    btnBebidas.value = 'Bebidas'
     btnBebidas.innerText = 'Bebidas'
 
     categoriaBtn.append(btnPanificadora, btnFrutas, btnBebidas)
