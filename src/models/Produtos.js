@@ -3,7 +3,7 @@ import { ListarProdutos } from '../models/Api.js';
 const section = document.querySelector('.container-cards')
 const statusCarrinhoVazio = document.querySelector('#mensagemStatusCarrinho')
 const criarUL = document.createElement('ul')
-const ulCarrinho = document.querySelector('#ulCarrinho')
+
 
     const quantidade = document.querySelector('#quantidade')
     const total = document.querySelector('#total')
@@ -168,6 +168,5 @@ class Produtos{
 const produtos = await ListarProdutos.metodoGet()
 Produtos.DataBase = produtos
 Produtos.mostrarProdutos(produtos)
-
 
 export { Produtos }
