@@ -3,7 +3,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenzie Food</title>
+  <title>Kenzie Food - Admin</title>
   <link rel="stylesheet" href="/src/styles/reset.css">
   <link rel="stylesheet" href="/src/styles/home.css">
   <link rel="stylesheet" href="/src/styles/modal.css">
@@ -25,10 +25,10 @@
   <main id="secaoPrincipal">
     <section class="container-filtros">
       <menu class="botoes-filtros">
-        <button>Todos</button>
-        <button>Panificadora</button>
-        <button>Frutas</button>
-        <button>Bebidas</button>
+        <button value="todos">Todos</button>
+        <button value="panificadora"><img src="../styles/imgs/icone-panificadora.png" alt="">Panificadora</button>
+        <button value="frutas"><img src="../styles/imgs/icone-frutas.png" alt="">Frutas</button>
+        <button value="bebidas"><img src="../styles/imgs/icone-bebidas.png" alt="">Bebidas</button>
       </menu>
     </section>
 
@@ -63,6 +63,7 @@
     <script type='module' src='/src/models/Api.js'></script>
     <script type='module' src='/src/models/Produtos.js'></script>
     <script type='module' src='/src/js e handlers/handlerHomeAdmin.js'></script>
+    <script type="module" src="../js e handlers/handlerHomeAdmin.js"></script>
   </main>
 </body>
 </html>
