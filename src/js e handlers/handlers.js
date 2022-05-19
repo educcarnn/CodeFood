@@ -4,9 +4,13 @@ import { Produtos } from "../models/Produtos.js"
 
 const btnLogar = document.querySelector(".btnLoginHome")
 
-btnLogar.addEventListener("click", function (event) {
+
+
+const btnLogar = document.querySelector('.btnLoginModal')
+btnLogar.addEventListener('click', function(event){
   const clicouLogin = event.target.classList
-  console.log(clicouLogin[0] === "btnLoginHome")
+  console.log(clicouLogin)
+  console.log(clicouLogin[0] === 'btnLoginHome')
 
   if (clicouLogin[0] === "btnLoginHome") {
     Modals.modalLogin()

@@ -202,6 +202,7 @@ li {
   }
   
   ul{
+ 
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -337,4 +338,22 @@ li {
     flex-direction: column;
     justify-content: space-around;
     align-items: stretch;
+}
+#iconeRemover{
+  width: 80px;
+  height: 38px;
+  margin-left: 102px;
+  margin-top: -21px;
+}
+#mensagemStatusCarrinho {
+  padding-top: 130px;
+ 
+}
+
+/*Respostas Api*/
+#erroLogin{
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    color: white;
 }
