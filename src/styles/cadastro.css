@@ -140,3 +140,10 @@ header{
   border-radius: 32px;
   cursor: pointer;
 }
+
+.restricaoTipo{
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  background-color: white;
+  color: #FF2253;
+}

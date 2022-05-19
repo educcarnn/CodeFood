@@ -106,6 +106,24 @@ class Modals{
 
     categoriaBtn.append(btnPanificadora, btnFrutas, btnBebidas)
 
+    const containerPreco = document.createElement('div')
+    containerPreco.classList = 'containerCategoria'
+
+    formularioCadastroProduto.appendChild(containerPreco)
+
+    const categoriaPreco = document.createElement('label')
+    categoriaPreco.classList = 'categoriaTitulo'
+    categoriaPreco.innerText = 'Valor do Produto'
+
+    const inputPreco = document.createElement('input')
+    inputPreco.type = 'number'
+    inputPreco.name = 'preco'
+    inputPreco.placeholder = '50,00'
+    inputPreco.classList = 'categoria'
+    inputPreco.ariaRequired = 'true'
+
+    containerPreco.append(categoriaPreco, inputPreco)
+
     const containerCategoria4 = document.createElement('div')
     containerCategoria4.classList = 'containerCategoria'
 
@@ -158,7 +176,7 @@ class Modals{
         }
        
       }
-      //await Privados.criarProdutosPost(data)
+      await Privados.criarProdutosPost(data)
       console.log(data)
     })
 
