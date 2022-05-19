@@ -18,7 +18,6 @@ btnAdicionarProduto.addEventListener('click', function(){
   Modals.modalCadastroProduto()
 })
 
-<<<<<<< HEAD
 const inputPesquisarProduto = document.querySelector('.input-campo')
 inputPesquisarProduto.addEventListener("keyup", function (event) {
   pesquisaInstantanea(event.target.value)
@@ -34,25 +33,6 @@ function pesquisaInstantanea(palavraPesquisada) {
   )
 
   Produtos.mostrarProdutos(produtoFiltrado)
-=======
-const inputPesquisarProduto = document.querySelector('#input-pesquisar')
-inputPesquisarProduto.addEventListener("keyup", function(event) {
-pesquisaInstantanea(event.target.value)
- })
-
-
-function pesquisaInstantanea(palavraPesquisada) {
-  const containerProdutos = document.querySelector('.lista-produtos')
-
- containerProdutos.innerHTML = ''
-let produtoFiltrado = ProdutosCriados.DataBase.filter(
-(produto) =>
-       produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
-    produto.categoria.toLowerCase().includes(palavraPesquisada.toLowerCase())
-  )
-
-   ProdutosCriados.metodoGet(produtoFiltrado)
->>>>>>> e712e6750e9454fd2c7cac32f92e0e0846100f10
 }
 
 const botoesCategorias = document.querySelectorAll('li')
@@ -69,24 +49,24 @@ function filtrarPorCategoria(categoria) {
   let produtosFiltrados
   const containerProdutos = document.querySelector('.lista-produtos')
 
-  if (categoria == 'Todos') {
+  if (categoria == 'Todos' || categoria == 'todos') {
     containerProdutos.innerHTML = ''
     ProdutosCriados.metodoGet(produtos)
   }
 
-  if (categoria == 'Panificadora') {
+  if (categoria == 'Panificadora' || categoria == 'panificadora') {
     produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Panificadora')
     containerProdutos.innerHTML = ''
     ProdutosCriados.metodoGet(produtosFiltrados)
   }
 
-  if (categoria == 'Frutas') {
+  if (categoria == 'Frutas' || categoria === 'frutas') {
     produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Frutas')
     containerProdutos.innerHTML = ''
     ProdutosCriados.metodoGet(produtosFiltrados)
   }
 
-  if (categoria == 'Bebidas') {
+  if (categoria == 'Bebidas' || categoria === 'bebidas' ) {
     produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Bebidas')
     containerProdutos.innerHTML = ''
     ProdutosCriados.metodoGet(produtosFiltrados) 
