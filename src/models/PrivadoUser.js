@@ -38,8 +38,6 @@ class ProdutosCriados{
                 const excluirDivPrivado = document.createElement('img')
                 excluirDivPrivado.id ='excluir'
                 excluirDivPrivado.classList.add(id)
-
-
               
             ul.appendChild(li)
                 li.appendChild(imagemProdutoPrivado)
@@ -47,8 +45,8 @@ class ProdutosCriados{
                 li.appendChild(categoriaProdutoPrivado)
                 li.appendChild(descricaoProdutoPrivado)
                     li.appendChild(divPrivado)
-                    divPrivado.appendChild(imgDivPrivado)
-                    divPrivado.appendChild(excluirDivPrivado)
+                        divPrivado.appendChild(imgDivPrivado)
+                        divPrivado.appendChild(excluirDivPrivado)
 
          })
 
