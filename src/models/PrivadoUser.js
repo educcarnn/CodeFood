@@ -4,12 +4,8 @@ import { Privados } from "./Api.js"
 
 class ProdutosCriados{
     static DataBase = []
-    
     static async metodoGet(itemsPrivados) {
-        
-
         const ul = document.querySelector('.lista-produtos')
-
         itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
 
             const li = document.createElement('li')
