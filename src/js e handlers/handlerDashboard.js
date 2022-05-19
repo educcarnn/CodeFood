@@ -18,23 +18,6 @@ btnAdicionarProduto.addEventListener('click', function(){
   Modals.modalCadastroProduto()
 })
 
-<<<<<<< HEAD
-const inputPesquisarProduto = document.querySelector('.input-campo')
-inputPesquisarProduto.addEventListener("keyup", function (event) {
-  pesquisaInstantanea(event.target.value)
-})
-
-function pesquisaInstantanea(palavraPesquisada) {
-  const containerProdutos = document.querySelector('.container-cards')
-  containerProdutos.innerHTML = ''
-  let produtoFiltrado = Produtos.DataBase.filter(
-    (produto) =>
-      produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
-      produto.categoria.toLowerCase().includes(palavraPesquisada.toLowerCase())
-  )
-
-  Produtos.mostrarProdutos(produtoFiltrado)
-=======
 const inputPesquisarProduto = document.querySelector('#input-pesquisar')
 inputPesquisarProduto.addEventListener("keyup", function(event) {
 pesquisaInstantanea(event.target.value)
@@ -52,7 +35,6 @@ let produtoFiltrado = ProdutosCriados.DataBase.filter(
   )
 
    ProdutosCriados.metodoGet(produtoFiltrado)
->>>>>>> e712e6750e9454fd2c7cac32f92e0e0846100f10
 }
 
 const botoesCategorias = document.querySelectorAll('li')
