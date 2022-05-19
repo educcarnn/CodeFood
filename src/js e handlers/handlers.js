@@ -60,7 +60,6 @@ secaoPrincipal.addEventListener('click', async function(event){
 })
 
 
-
 /*
 const btnAdicionarProduto = document.getElementById('btnAdicionarProduto')
 const ul = document.querySelector('.lista-produtos')

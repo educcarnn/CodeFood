@@ -89,20 +89,19 @@ class Privados{
         })
         .then(response => response.json())
         .then((response) => {
-            if(response.status !== "Error") {
-                const statusCadastro = Modals.modalStatusCadastrado()
-                setTimeout(() => {
+            const statusCadastro = Modals.modalStatusCadastrado()
+            setTimeout(() => {
                     //statusCadastro.removed()
-                }, 3000);
-            }
-            else {
-                const statusNaoCadastro = Modals.modalStatusNaoCadastrado()
-                setTimeout(() => {
-                //statusNaoCadastro.remove()
-                }, 3000);
-            }
+             }, 3000);  
         })
-    }
+        .catch((error) => {
+            console.error(error)
+            const statusNaoCadastro = Modals.modalStatusNaoCadastrado()
+            setTimeout(() => {
+            //statusNaoCadastro.remove()
+             }, 3000);
+        })
+}
 
     static async editarProdutosPost(dadosParaAlterar, id){
         const URL = "https://api-kenzie-food.herokuapp.com"
