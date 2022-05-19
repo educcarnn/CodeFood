@@ -76,20 +76,32 @@ class Privados{
         return data
     }
 
-    static async criarProdutosPost(dadosProduto, id) {
+    static async criarProdutosPost(dadosProduto) {
         const URL = "https://api-kenzie-food.herokuapp.com"
         
-        return await fetch(`${URL}/my/products/${id}`, {
+        return await fetch(`${URL}/my/products`, {
             method: "POST", 
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem('token')}`
+                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdhYzc1ZmUxLTM1NWEtNDU4OS1hMDZkLWQwMzlhZGE4NjhkMSIsImlhdCI6MTY1Mjk2NDA2MiwiZXhwIjoxNjUzODI4MDYyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.rYhhQYgkMSz2eQ-eki-fREWL7ez7tx2VrMoDhV6R5Kc`
             },
             body: JSON.stringify(dadosProduto)
         })
         .then(response => response.json())
-        .then(response => response)
-        .catch(err => console.error(err));
+        .then((response) => {
+            if(response.status !== "Error") {
+                const statusCadastro = Modals.modalStatusCadastrado()
+                setTimeout(() => {
+                statusCadastro.remove()
+                }, 3000);
+            }
+            else {
+                const statusNaoCadastro = Modals.modalStatusNaoCadastrado()
+                setTimeout(() => {
+                    statusNaoCadastro.remove()
+                }, 3000);
+            }
+        })
     }
 
     static async editarProdutosPost(dadosParaAlterar, id){

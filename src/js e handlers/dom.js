@@ -4,7 +4,7 @@ const secaoPrincipal = document.getElementById('secaoPrincipal')
 
 class Modals{
 
-  static modalCadastroProduto(){
+  static async modalCadastroProduto(){
 
     let data = {}
 
@@ -143,7 +143,7 @@ class Modals{
 
     let categoria = ''
 
-    btnCadastrar.addEventListener('click', function(event){
+    btnCadastrar.addEventListener('click', async function(event){
       event.preventDefault()
       const clicouCategoria = event.target.classList
 
@@ -158,7 +158,8 @@ class Modals{
         }
        
       }
-      
+      //await Privados.criarProdutosPost(data)
+      console.log(data)
     })
 
     const btnProdutos = document.querySelector('.categoriaBtn')
@@ -180,7 +181,9 @@ class Modals{
       }
       
     })
-
+    console.log(data)
+   
+     
   }
 
   static modalLogin(){
