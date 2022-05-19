@@ -82,4 +82,5 @@ ul.addEventListener('click', function(event){
   if(clicouEditar === 'editar'){
     Modals.editarProduto(productId)
   }
+  
 })
