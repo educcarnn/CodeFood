@@ -30,14 +30,14 @@ const ul = document.querySelector('.lista-produtos')
 //   Modals.modalCadastroProduto()
 // })
 
-const inputPesquisarProduto = document.querySelector(".input-campo")
-inputPesquisarProduto.addEventListener("keyup", function (event) {
+const inputPesquisarProduto = document.querySelector('.input-campo')
+inputPesquisarProduto.addEventListener('keyup', function (event) {
   pesquisaInstantanea(event.target.value)
 })
 
 function pesquisaInstantanea(palavraPesquisada) {
   const containerProdutos = document.querySelector(".container-cards")
-  containerProdutos.innerHTML = ""
+  containerProdutos.innerHTML = ''
   let produtoFiltrado = Produtos.DataBase.filter(
     (produto) =>
       produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
@@ -47,11 +47,12 @@ function pesquisaInstantanea(palavraPesquisada) {
   Produtos.mostrarProdutos(produtoFiltrado)
 }
 
-const botoesCategorias = document.querySelectorAll("button")
+const botoesCategorias = document.querySelectorAll('button')
 
 botoesCategorias.forEach((botao) => {
-  botao.addEventListener("click", function (event) {
+  botao.addEventListener('click', function (event) {
     const valorBotao = event.target.value
+    console.log(valorBotao)
     filtrarPorCategoria(valorBotao)
   })
 })
@@ -59,7 +60,7 @@ botoesCategorias.forEach((botao) => {
 function filtrarPorCategoria(categoria) {
   const produtos = Produtos.DataBase
   let produtosFiltrados
-  const containerProdutos = document.querySelector(".container-cards")
+  const containerProdutos = document.querySelector('.container-cards')
 
   if (categoria == 'todos') {
     containerProdutos.innerHTML = ''
