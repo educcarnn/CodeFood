@@ -1,3 +1,4 @@
+import { Privados } from "../models/Api.js"
 import { ProdutosCriados } from "../models/PrivadoUser.js"
 
 import { Modals } from "./dom.js"
@@ -19,18 +20,23 @@ btnAdicionarProduto.addEventListener('click', function(){
 })
 
 const inputPesquisarProduto = document.querySelector('#input-pesquisar')
+let produtoCadastrado = await Privados.listarProdutosGet()
+
 inputPesquisarProduto.addEventListener("keyup", function(event) {
 pesquisaInstantanea(event.target.value)
  })
 
 
-function pesquisaInstantanea(palavraPesquisada) {
+async function pesquisaInstantanea(palavraPesquisada) {
   const containerProdutos = document.querySelector('.lista-produtos')
 
- containerProdutos.innerHTML = ''
-let produtoFiltrado = ProdutosCriados.DataBase.filter(
-(produto) =>
-       produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
+  containerProdutos.innerHTML = ''
+  
+  console.log(produtoCadastrado)
+
+  let produtoFiltrado = produtoCadastrado.filter(
+  (produto) =>
+    produto.nome.toLowerCase().includes(palavraPesquisada.toLowerCase()) ||
     produto.categoria.toLowerCase().includes(palavraPesquisada.toLowerCase())
   )
 
@@ -46,32 +52,34 @@ botoesCategorias.forEach((botao) => {
   })
 })
 
-function filtrarPorCategoria(categoria) {
-  const produtos = ProdutosCriados.DataBase
-  let produtosFiltrados
+async function filtrarPorCategoria(categoria) {
+  
   const containerProdutos = document.querySelector('.lista-produtos')
+
+  let produtos
 
   if (categoria == 'Todos') {
     containerProdutos.innerHTML = ''
-    ProdutosCriados.metodoGet(produtos)
+   await ProdutosCriados.metodoGet(produtos)
   }
 
   if (categoria == 'Panificadora') {
-    produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Panificadora')
+    
+    produtos = produtoCadastrado.filter((produto) => produto.categoria == 'Panificadora')
     containerProdutos.innerHTML = ''
-    ProdutosCriados.metodoGet(produtosFiltrados)
+    await ProdutosCriados.metodoGet(produtos)
   }
 
   if (categoria == 'Frutas') {
-    produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Frutas')
+    produtos = produtoCadastrado.filter((produto) => produto.categoria == 'Frutas')
     containerProdutos.innerHTML = ''
-    ProdutosCriados.metodoGet(produtosFiltrados)
+    await ProdutosCriados.metodoGet(produtos)
   }
 
   if (categoria == 'Bebidas') {
-    produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Bebidas')
+    produtos = produtoCadastrado.filter((produto) => produto.categoria == 'Bebidas')
     containerProdutos.innerHTML = ''
-    ProdutosCriados.metodoGet(produtosFiltrados) 
+    await ProdutosCriados.metodoGet(produtos) 
   }
 }
 
@@ -82,5 +90,5 @@ ul.addEventListener('click', function(event){
   if(clicouEditar === 'editar'){
     Modals.editarProduto(productId)
   }
-  
+
 })
