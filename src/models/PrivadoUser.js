@@ -1,12 +1,16 @@
 
 import { Privados } from "./Api.js"
 
-
 class ProdutosCriados{
     static DataBase = []
-    static async metodoGet(itemsPrivados) {
+    static async metodoGet() {
+
+        const produtoCadastrado = await Privados.listarProdutosGet()
+       
+        console.log(produtoCadastrado)
+
         const ul = document.querySelector('.lista-produtos')
-        itemsPrivados.forEach(({id, imagem, nome, categoria, descricao}) => {
+        produtoCadastrado.forEach(({id, imagem, nome, categoria, descricao}) => {
 
             const li = document.createElement('li')
             li.productId = id
@@ -49,14 +53,12 @@ class ProdutosCriados{
                         divPrivado.appendChild(excluirDivPrivado)
 
          })
-
-         
+  
     }
 }
 
-const produtosPrivadosNovos = await Privados.listarProdutosGet()
-ProdutosCriados.DataBase = produtosPrivadosNovos
+ProdutosCriados.metodoGet()
 
-ProdutosCriados.metodoGet(produtosPrivadosNovos)
-console.log(ProdutosCriados.DataBase)
+
+
 export {ProdutosCriados}
