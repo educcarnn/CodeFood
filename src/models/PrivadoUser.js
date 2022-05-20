@@ -7,8 +7,6 @@ class ProdutosCriados{
 
         const produtoCadastrado = await Privados.listarProdutosGet()
        
-        console.log(produtoCadastrado)
-
         const ul = document.querySelector('.lista-produtos')
         produtoCadastrado.forEach(({id, imagem, nome, categoria, descricao}) => {
 
