@@ -26,7 +26,6 @@ inputPesquisarProduto.addEventListener("keyup", function(event) {
 pesquisaInstantanea(event.target.value)
  })
 
-
 async function pesquisaInstantanea(palavraPesquisada) {
   const containerProdutos = document.querySelector('.lista-produtos')
 

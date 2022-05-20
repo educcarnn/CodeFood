@@ -181,6 +181,9 @@ class Modals{
        
       }
     await Privados.criarProdutosPost(data)
+    setTimeout(() => {
+      location.reload()
+    }, 1000);
       
     })
 
@@ -205,7 +208,6 @@ class Modals{
     })
     console.log(data)
    
-     
   }
 
   static modalLogin(){
@@ -633,6 +635,9 @@ class Modals{
        
       }
       Privados.editarProdutosPost(data, productId)
+      setTimeout(() => {
+        location.reload()
+      }, 1000);
     })
 
     const btnProdutos = document.querySelector('.categoriaBtn')
@@ -652,6 +657,7 @@ class Modals{
       if(clicouCategoria === 'bebidas'){
         categoriaValue = clicouCategoria
       }
+     
     })
   }
 }
