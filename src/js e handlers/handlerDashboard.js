@@ -68,7 +68,7 @@ function filtrarPorCategoria(categoria) {
     ProdutosCriados.metodoGet(produtosFiltrados)
   }
 
-  if (categoria == 'Bebidas') {
+  if (categoria == 'Bebidas' || categoria == 'bebidas') {
     produtosFiltrados = produtos.filter((produto) => produto.categoria == 'Bebidas')
     containerProdutos.innerHTML = ''
     ProdutosCriados.metodoGet(produtosFiltrados) 
