@@ -1,5 +1,4 @@
 /* Públicas*/
-import { Login } from "../models/Api.js"
 
 //Login
 const button = document.querySelector('.btnLoginModal')
@@ -93,7 +92,6 @@ class Validacao{
             }
 }
         
-export { Validacao }
 
 //o login precisa ser trabalhado com await, caso ele precise ser rediredicionado para locais diferentes 
 
