@@ -1,0 +1,77 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenzie Food - Home</title>
+  <link rel="stylesheet" href="/src/styles/reset.css">
+  <link rel="stylesheet" href="./src/styles/home.css">
+  <link rel="stylesheet" href="/src/styles/modal.css">
+  
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet'>
+
+<body>
+  <header>
+    <h1>Kenzie Food</h1>
+    <div class="containerLogin" >
+      <input type="search" class="input-campo" placeholder="Pesquisar por produto" name="input-pesquisar">
+      <button class="btnLoginHome">Login</button>
+     
+    </div>
+  </header>
+
+  <main id="secaoPrincipal">
+    <section class="container-filtros">
+      <menu class="botoes-filtros">
+        <button value="todos">Todos</button>
+        <button value="panificadora"><img src="./src/styles/imgs/icone-panificadora.png" alt="">Panificadora</button>
+        <button value="frutas"><img src="./src/styles/imgs/icone-frutas.png" alt="">Frutas</button>
+        <button value="bebidas"><img src="./src/styles/imgs/icone-bebidas.png" alt="">Bebidas</button>
+      </menu>
+    </section>
+
+    <!-- <section class="container-carrinho"> -->
+      <aside id='produtosFilhos'>
+        <div id="header-carrinho">
+          <h3>Carrinho</h3>
+        </div>
+        <div id="corpo-carrinho">
+
+          <p id="mensagemStatusCarrinho">Por enquanto não temos produtos no carrinho</p> 
+          <!-- COMENTAR TODA UL DEPOIS DO COMENTÁRIO -->
+          <!-- <ul id="ulCarrinho"> -->
+            <!-- <li id="liCarrinho"> -->
+              <!-- <div id="divInfoCarrinho"></div> -->
+              <!-- <img src="https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/pastel.png" id="imagemProdutoNoCarrinho">
+              <h2 class="3c800a50-9f96-47e7-bc18-bb1a8a130f37" id="nomeProdutoCarrinho">Pastel de verduras vegano</h2>
+              <span id="categoriaProdutoCarrinho">Panificadora</span>
+              <span>R$ 20</span>
+              <img src="/src/styles/imgs/iconeLixeira.svg" id="iconeRemover"> -->
+            <!-- </li> -->
+          <!-- </ul> -->
+        </div>
+
+        <div id="footer-carrinho">
+          <div id="quantidade">
+            
+          </div>
+          <div id="total">
+  
+          </div>
+        </div> 
+
+      </aside>
+    <!-- </section> -->
+
+    <section class="container-cards">
+
+
+  </main>
+  
+  <script type='module' src='/src/models/Api.js'></script>
+  <script type='module' src='/src/models/Produtos.js'></script>
+  <script type="module" src="/src/js e handlers/handlers.js"></script>
+</body>
+</html>
