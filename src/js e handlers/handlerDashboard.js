@@ -5,6 +5,12 @@ import { Modals } from "./dom.js"
 
 const btnAdicionarProduto = document.getElementById('btnAdicionarProduto')
 const ul = document.querySelector('.lista-produtos')
+const botaoLogout = document.querySelector('#user')
+
+botaoLogout.addEventListener('click', (e)=> {
+    localStorage.removeItem('token')
+    window.location = `/index.html`
+})
 
 ul.addEventListener('click', function(event){
   const clicouExcluir = event.target.id

@@ -47,7 +47,8 @@ class Produtos{
 
             const precoProdutos = document.createElement('span')
             precoProdutos.innerText = `R$ ${preco}`
-            precoProdutos.id = 'preco'
+            precoProdutos.id = 'precoCarrinho'
+            
 
             const imgAddCard = document.createElement('img')
             imgAddCard.src = "/src/styles/imgs/btnAddCard.svg"
