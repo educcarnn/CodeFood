@@ -42,7 +42,6 @@ class Login {
         })
        
         const data     =  await login.json()
-        console.log(data)
         return data  
     }  
 }
@@ -56,9 +55,7 @@ class Privados{
         const produtos = await fetch(`${URL}/my/products`, {
             method: "GET",
             headers: {
-                /* valor chumbado para testes*/
-                /* Situação normal é getitem do localstorage com token*/
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdhYzc1ZmUxLTM1NWEtNDU4OS1hMDZkLWQwMzlhZGE4NjhkMSIsImlhdCI6MTY1Mjk2NDA2MiwiZXhwIjoxNjUzODI4MDYyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.rYhhQYgkMSz2eQ-eki-fREWL7ez7tx2VrMoDhV6R5Kc`
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
             }
         })
         const data = await produtos.json()
@@ -72,7 +69,7 @@ class Privados{
             method: "POST", 
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdhYzc1ZmUxLTM1NWEtNDU4OS1hMDZkLWQwMzlhZGE4NjhkMSIsImlhdCI6MTY1Mjk2NDA2MiwiZXhwIjoxNjUzODI4MDYyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.rYhhQYgkMSz2eQ-eki-fREWL7ez7tx2VrMoDhV6R5Kc`
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(dadosProduto)
         })
@@ -121,7 +118,7 @@ class Privados{
         return await fetch(`${URL}/my/products/${id}`, {
             method: "DELETE",
             headers:  {
-                "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdhYzc1ZmUxLTM1NWEtNDU4OS1hMDZkLWQwMzlhZGE4NjhkMSIsImlhdCI6MTY1Mjk2NDA2MiwiZXhwIjoxNjUzODI4MDYyLCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.rYhhQYgkMSz2eQ-eki-fREWL7ez7tx2VrMoDhV6R5Kc`
+                "Authorization": `Bearer ${localStorage.getItem('token')}`
             },
         })
         .then(response => console.log(response))
