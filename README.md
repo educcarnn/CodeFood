@@ -6,6 +6,8 @@
 Utilizado o conceito de metodologias agéis em todo o projeto, e no quesito técnico, os conhecimentos de POO/JavaScript, HTML e CSS 
 
 Integrantes do grupo:
+
+
 Eduardo Carneiro (Tech lead)
 
 
