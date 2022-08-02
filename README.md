@@ -7,7 +7,11 @@ Utilizado o conceito de metodologias agéis em todo o projeto, e no quesito téc
 
 Integrantes do grupo:
 Eduardo Carneiro (Tech lead)
+
+
 Pedro Bernardes (Scrum Master)
+
+
 Kamila Mattos 
 
 
